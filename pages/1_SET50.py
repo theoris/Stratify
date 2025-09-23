@@ -305,6 +305,9 @@ if user_email:
             # Restore into session_state
             st.session_state["selected_series"] = strat.get("selected_series", [])
             st.session_state["df_legs_saved"] = pd.DataFrame(legs_data)
+            # default_price = df_legs_loaded[df_legs_loaded["Series"] == s]["TradePrice"].values[0]
+            # default_qty = df_legs_loaded[df_legs_loaded["Series"] == s]["Qty"].values[0]
+
 
             load_state = True
             template_choice = "Saved"
@@ -884,8 +887,15 @@ if st.button("Save Strategy"):
         # Convert DataFrame for JSON storage
         df_save = df_legs.copy()
         df_save["Expiry"] = df_save["Expiry"].astype(str)  # JSON safe
-
-        strategy_content = df_save.to_dict(orient="records")
+        save_payload = {
+                "entry_date": str(date.today()),
+                "selected_series": selected_series,
+                "legs": df_save.to_dict(orient="records")
+            }
+        # save_file = SAVE_DIR / f"{save_name}.json"
+        # with open(save_file, "w", encoding="utf-8") as f:
+        #     json.dump(save_payload, f, indent=2, ensure_ascii=False)        
+        strategy_content = save_payload.to_dict(orient="records")
 
         # Save to Supabase (always inserts a new row)
         supabase.table("strategies").insert(
