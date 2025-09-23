@@ -47,43 +47,32 @@ st.info("👈 Choose an index page from the sidebar to get started!")
 # --- Sidebar ---
 st.sidebar.title("🔑 Authentication")
 
-if "email" not in st.session_state:
-    # 🔹 MUST include redirect_uri + scope
-    result = oauth2.authorize_button(
-        "Login with Google",
-        redirect_uri=REDIRECT_URI,
-        scope="openid email profile",
-    )
+if result:
+    # Different versions of streamlit-oauth return token differently
+    email = None
 
-    if result:
-        email = result["id_token"]["email"]
+    # Case 1: id_token directly in result
+    if "id_token" in result:
+        from jwt import decode
+        id_token = result["id_token"]
+        # decode the JWT (without verifying for simplicity)
+        payload = decode(id_token, options={"verify_signature": False})
+        email = payload.get("email")
+
+    # Case 2: id_token nested under token
+    elif "token" in result and "id_token" in result["token"]:
+        from jwt import decode
+        id_token = result["token"]["id_token"]
+        payload = decode(id_token, options={"verify_signature": False})
+        email = payload.get("email")
+
+    if email:
         st.session_state["email"] = email
-        st.success(f"Welcome {email}")
-else:
-    st.sidebar.success(f"✅ Logged in as: {st.session_state['email']}")
-    if st.sidebar.button("Logout"):
-        st.session_state.clear()
-        st.rerun()
-    # # --- Signup ---
-    # elif choice == "Signup":
-    #     st.subheader("Signup")
-    #     email = st.text_input("Email")
-    #     password = st.text_input("Password", type="password")
-    #     confirm = st.text_input("Confirm Password", type="password")
+        st.success(f"✅ Welcome {email}")
+    else:
+        st.error("⚠️ Could not extract email from Google login response.")
+        st.write("Debug result:", result)
 
-    #     if st.button("Create Account"):
-    #         if not email or not password:
-    #             st.warning("⚠️ Email and password required")
-    #         elif password != confirm:
-    #             st.warning("⚠️ Passwords do not match")
-    #         else:
-    #             if add_user(email, password):
-    #                 st.session_state["email"] = email
-    #                 st.session_state["role"] = "viewer"  # default role
-    #                 st.success(f"🎉 Account created and logged in as {email}")
-    #                 st.rerun()
-    #             else:
-    #                 st.error("❌ Email already registered")
 
 
 # Sidebar navigation
