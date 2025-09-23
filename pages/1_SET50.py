@@ -859,6 +859,7 @@ st.download_button("Download strategy_legs.csv", data=df_legs.to_csv(index=False
 st.download_button("Download payoff_full.csv", data=pd.DataFrame({"Spot": S_range, "P/L_expiry": total_pnl_expiry, "P/L_before": total_pnl_before}).to_csv(index=False).encode(), file_name="payoff_full.csv", mime="text/csv", disabled=disabled)
 
 #SAVE
+# Prepare df_legs for saving
 st.subheader("💾 Save Strategy")
 strategy_name = st.text_input("Strategy name")
 if st.button("Save My Strategy", disabled=disabled):
@@ -867,35 +868,34 @@ if st.button("Save My Strategy", disabled=disabled):
     elif not strategy_name.strip():
         st.error("⚠️ Please enter a strategy name.")
     else:
-        try:
-            # Prepare df_legs for saving
-            df_save = df_legs.copy()
-            df_save["Expiry"] = df_save["Expiry"].astype(str)
+        # Convert DataFrame for JSON storage
+        df_save = df_legs.copy()
+        df_save["Expiry"] = df_save["Expiry"].astype(str)
 
-            # Convert to JSON-serializable dict
-            strategy_content = df_save.to_dict(orient="records")
+        strategy_content = df_save.to_dict(orient="records")
 
-            supabase.table("strategies").upsert(
-                {
-                    "email": user_email,
-                    "name": strategy_name,
-                    "content": strategy_content,
-                },
-                on_conflict=["email", "name"]
-            ).execute()
+        # Save (upsert avoids duplicate error)
+        supabase.table("strategies").upsert(
+            {
+                "email": user_email,
+                "name": strategy_name,
+                "content": strategy_content,
+            },
+            on_conflict=["email", "name"]
+        ).execute()
 
-            st.success(f"✅ Strategy '{strategy_name}' saved for {user_email}")
-        except json.JSONDecodeError:
-            st.error("❌ Invalid JSON format.")
+        st.success(f"✅ Strategy '{strategy_name}' saved for {user_email}")
 
 # --- Load saved strategies ---
 if user_email:
     st.subheader("📂 My Saved Strategies")
     res = supabase.table("strategies").select("*").eq("email", user_email).execute()
+
     if res.data:
         for strat in res.data:
             with st.expander(strat["name"]):
-                st.json(strat["content"])
+                df_loaded = pd.DataFrame(strat["content"])
+                st.dataframe(df_loaded)
     else:
         st.info("No saved strategies yet.")
 
