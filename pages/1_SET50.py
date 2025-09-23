@@ -299,16 +299,15 @@ if user_email:
             # Find the chosen strategy
             strat = next(s for s in strategies if s["name"] == selected_name)
 
-            # Strategy content (list of dicts)
-            legs_data = strat.get("legs", [])
+            content = strat.get("content", {})  # content dict inside row
+
+            # Extract legs + selected_series
+            legs_data = content.get("legs", [])
+            selected_series = content.get("selected_series", [])
 
             # Restore into session_state
-            st.session_state["selected_series"] = strat.get("selected_series", [])
+            st.session_state["selected_series"] = selected_series
             st.session_state["df_legs_saved"] = pd.DataFrame(legs_data)
-            # default_price = df_legs_loaded[df_legs_loaded["Series"] == s]["TradePrice"].values[0]
-        #     # default_qty = df_legs_loaded[df_legs_loaded["Series"] == s]["Qty"].values[0]
-        # st.session_state["selected_series"] = loaded.get("selected_series", [])
-        # st.session_state["df_legs_saved"] = pd.DataFrame(loaded.get("legs", []))
 
             load_state = True
             template_choice = "Saved"
@@ -893,9 +892,6 @@ if st.button("Save Strategy"):
                 "selected_series": selected_series,
                 "legs": df_save.to_dict(orient="records")
             }
-        # save_file = SAVE_DIR / f"{save_name}.json"
-        # with open(save_file, "w", encoding="utf-8") as f:
-        #     json.dump(save_payload, f, indent=2, ensure_ascii=False)        
         strategy_content = save_payload
 
         # Save to Supabase (always inserts a new row)
