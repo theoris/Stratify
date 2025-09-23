@@ -1,5 +1,5 @@
-<b>This app uses the Streamlit.io cloud service<b><br>
-<a href:"https://stratifyth.streamlit.app/">stratifyth.streamlit.app</a>
+<h1>This app uses the Streamlit.io cloud service</h1><br>
+<p><a href="https://stratifyth.streamlit.app/" target="_blank">Go to stratifyth.streamlit.app !</a> </p>
 objective :<br>
 SET index Thailand ref:<br>
 The future & option of SET50 (and some future products)<br>
