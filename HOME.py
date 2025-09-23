@@ -50,7 +50,7 @@ Each page contains the **same tool structure** but loads different JSON market &
 st.info("👈 Choose an index page from the sidebar to get started!")
 
 # --- Sidebar ---
-st.sidebar.title("🔑 Authentication")
+# st.sidebar.title("🔑 Authentication")
 
 if "email" not in st.session_state:
     # Show Google login button
@@ -100,8 +100,3 @@ else:
         st.session_state.clear()
         st.rerun()
 
-# --- Sidebar navigation ---
-st.sidebar.markdown("---")
-st.sidebar.markdown("📂 Pages:")
-st.sidebar.page_link("pages/1_SET50.py", label="SET50 Strategy")
-st.sidebar.page_link("pages/ADMIN_AREA.py", label="Admin Dashboard")
