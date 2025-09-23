@@ -4,8 +4,6 @@ from supabase_client import supabase
 import streamlit as st
 # Add parent directory (app/) to Python path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from auth import list_users, set_role, reset_password, delete_user, role_required
-
 
 st.set_page_config(page_title="Admin Dashboard", layout="wide",page_icon="📋")
 st.title("👑 Admin Dashboard")

@@ -7,7 +7,6 @@ from datetime import date
 import sys
 # Add parent directory (app/) to Python path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from auth import verify_user, add_user, current_user, role_required,get_user_role
 
 # Require login
 if "email" not in st.session_state:
