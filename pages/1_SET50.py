@@ -16,21 +16,22 @@ from supabase import create_client
 # Add parent directory (app/) to Python path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 # --- Setup Supabase ---
+# --- Setup Supabase ---
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
 SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# Default state
-user_email = st.session_state.get("email", None)
-user_role = st.session_state.get("role", "guest")
+st.set_page_config(page_title="SET50 Strategy", layout="wide")
+st.title("📈 SET50 Strategy Builder")
 
-# --- Auth check (viewer allowed, but saving restricted) ---
+# --- Auth check ---
 if "email" not in st.session_state:
     st.warning("👀 You can explore, but please login to save strategies.")
     user_email = None
 else:
     user_email = st.session_state["email"]
-    st.info(f"Logged in as: {user_email} ({st.session_state.get('role','viewer')})")
+    st.info(f"Logged in as: {user_email} ({st.session_state.get('role','viewer')}
+
 
 
 # Define permissions
@@ -862,7 +863,8 @@ st.download_button("Download payoff_full.csv", data=pd.DataFrame({"Spot": S_rang
 # Prepare df_legs for saving
 st.subheader("💾 Save Strategy")
 strategy_name = st.text_input("Strategy name")
-if st.button("Save My Strategy", disabled=disabled):
+
+if st.button("Save Strategy"):
     if not user_email:
         st.error("⚠️ Please login first.")
     elif not strategy_name.strip():
@@ -870,18 +872,17 @@ if st.button("Save My Strategy", disabled=disabled):
     else:
         # Convert DataFrame for JSON storage
         df_save = df_legs.copy()
-        df_save["Expiry"] = df_save["Expiry"].astype(str)
+        df_save["Expiry"] = df_save["Expiry"].astype(str)  # JSON safe
 
         strategy_content = df_save.to_dict(orient="records")
 
-        # Save (upsert avoids duplicate error)
-        supabase.table("strategies").upsert(
+        # Save to Supabase (always inserts a new row)
+        supabase.table("strategies").insert(
             {
                 "email": user_email,
                 "name": strategy_name,
                 "content": strategy_content,
-            },
-            on_conflict=["email", "name"]
+            }
         ).execute()
 
         st.success(f"✅ Strategy '{strategy_name}' saved for {user_email}")
@@ -898,6 +899,8 @@ if user_email:
                 st.dataframe(df_loaded)
     else:
         st.info("No saved strategies yet.")
+
+
 
 if not user_email or not user_role:
     st.sidebar.warning("⚠️ Please log in first. for more advance detail.")
