@@ -1,0 +1,58 @@
+[
+    {
+        "Series": "GF10",
+        "Position": "Spread",
+        "IM": 5484.5,
+        "MM": 3854.82,
+        "IntradayForceCloseMargin": 1661.02
+    },
+    {
+        "Series": "GF10V25",
+        "Position": "Outright",
+        "IM": 21938.0,
+        "MM": 15419.28,
+        "IntradayForceCloseMargin": 6644.08
+    },
+    {
+        "Series": "GF10Z25",
+        "Position": "Outright",
+        "IM": 21938.0,
+        "MM": 15419.28,
+        "IntradayForceCloseMargin": 6644.08
+    },
+    {
+        "Series": "GF10G26",
+        "Position": "Outright",
+        "IM": 21938.0,
+        "MM": 15419.28,
+        "IntradayForceCloseMargin": 6644.08
+    },
+    {
+        "Series": "GF50",
+        "Position": "Spread",
+        "IM": 27422.5,
+        "MM": 19274.1,
+        "IntradayForceCloseMargin": 8305.1
+    },
+    {
+        "Series": "GFV25",
+        "Position": "Outright",
+        "IM": 109690.0,
+        "MM": 77096.4,
+        "IntradayForceCloseMargin": 33220.4
+    },
+    {
+        "Series": "GFZ25",
+        "Position": "Outright",
+        "IM": 109690.0,
+        "MM": 77096.4,
+        "IntradayForceCloseMargin": 33220.4
+    },
+    {
+        "Series": "GFG26",
+        "Position": "Outright",
+        "IM": 109690.0,
+        "MM": 77096.4,
+        "IntradayForceCloseMargin": 33220.4
+    }
+]

@@ -1,0 +1,196 @@
+{
+    "Long Call": {
+        "description": "Used when expecting a strong bullish move.",
+        "group": "Directional Strategies (Bullish)",        
+        "components": [
+            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+        ]
+    },
+    "Bull Call Spread": {
+        "description": "A bullish strategy with limited risk and limited profit. Used when expecting a moderate rise in price.",
+        "group": "Directional Strategies (Bullish)",
+        "components": [
+            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
+        ]
+    },
+    "Bull Put Spread": {
+        "description": "Used when expecting a moderate rise in price or no change. A credit spread used to generate income.",
+        "group": "Directional Strategies (Bullish)",
+        "components": [
+            {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+        ]
+    },
+    "Covered Call": {
+        "description": "Used to generate income on a long stock position in a flat to slightly bullish market.",
+        "group": "Directional Strategies (Bullish)",
+        "components": [
+            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+        ]
+    },
+    "Long Future": {
+        "description": "A simple bullish strategy using a futures contract, with no defined risk or profit limits.",
+        "group": "Directional Strategies (Bullish)",
+        "components": [
+            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+        ]
+    },
+
+    "Long Put": {
+        "description": "Used when expecting a strong bearish move.",
+        "group": "Directional Strategies (Bearish)",
+        "components": [
+            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+        ]
+    },
+    "Bear Put Spread": {
+        "description": "A bearish strategy with limited risk and limited profit. Used when expecting a moderate fall in price.",
+        "group": "Directional Strategies (Bearish)",
+        "components": [
+            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0}
+        ]
+    },
+    "Bear Call Spread": {
+        "description": "Used when expecting a moderate fall in price or no change. A credit spread used to generate income.",
+        "group": "Directional Strategies (Bearish)",
+        "components": [
+            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
+        ]
+    },
+    "Protective Put": {
+        "description": "Used to hedge a long stock position against a price drop.",
+        "group": "Directional Strategies (Bearish)",
+        "components": [
+            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+        ]
+    },
+    "Short Future": {
+        "description": "A simple bearish strategy using a futures contract, with no defined risk or profit limits.",
+        "group": "Directional Strategies (Bearish)",
+        "components": [
+            {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+        ]
+    },
+    "Straddle": {
+        "description": "Used when expecting a significant move in either direction (high volatility). Profit is unlimited.",
+        "group": "Volatility Strategies (Non-Directional)",
+        "components": [
+            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+        ]
+    },
+    "Strangle": {
+        "description": "Similar to a Straddle but with a wider profit range, used for high volatility. Cheaper to enter but requires a bigger price move.",
+        "group": "Volatility Strategies (Non-Directional)",
+        "components": [
+            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+        ]
+    },
+    "Iron Condor": {
+        "description": "A non-directional, income-generating strategy used in low volatility. Limits both risk and profit.",
+        "group": "Volatility Strategies (Non-Directional)",
+        "components": [
+            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0},
+            {"type": "Call", "qty": 1, "relative_strike": 2, "relative_expiry": 0},
+            {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": -2, "relative_expiry": 0}
+        ]
+    },
+    "Iron Butterfly": {
+        "description": "A non-directional, income-generating strategy used for very low volatility. Requires the price to stay in a narrow range.",
+        "group": "Volatility Strategies (Non-Directional)",
+        "components": [
+            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
+            {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+        ]
+    },
+    "Long Butterfly (Call)": {
+        "description": "A low-risk strategy used when expecting a flat market. The max profit is at the middle strike price.",
+        "group": "Volatility Strategies (Non-Directional)",
+        "components": [
+            {"type": "Call", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
+            {"type": "Call", "qty": -2, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
+        ]
+    },
+    "Synthetic Long Stock": {
+        "description": "Used to replicate the profit/loss profile of owning a stock using options. Based on the concept of put-call parity.",
+        "group": "Synthetic & Combination Strategies",
+        "components": [
+            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+        ]
+    },
+    "Collar": {
+        "description": "A risk-management strategy used to protect a long stock position while limiting upside profit and generating some income.",
+        "group": "Synthetic & Combination Strategies",
+        "components": [
+            {"type": "Future", "qty": 1},
+            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
+            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
+        ]
+    },
+    "Calendar Spread (Call) multi-expiry": {
+        "description": "Used when expecting moderate volatility but a flat price in the short term. Profits from time decay of the short-term option.",
+        "group": "Multi-Expiry Strategies",
+        "components": [
+            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 1}
+        ]
+    },
+    
+    "Diagonal Spread (Call) multi-expiry": {
+        "description": "Similar to a Calendar Spread but uses different strike prices, offering more flexibility.",
+        "group": "Multi-Expiry Strategies",
+        "components": [
+            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 1}
+        ]
+    },
+    
+
+    "Double Diagonal multi-expiry": {
+        "description": "A complex, non-directional strategy used to profit from time decay. It is essentially an Iron Condor using diagonal spreads.",
+        "group": "Multi-Expiry Strategies",
+        "components": [
+            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0},
+            {"type": "Call", "qty": 1, "relative_strike": 2, "relative_expiry": 1},
+            {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": -2, "relative_expiry": 1}
+        ]
+    },
+
+    "Synthetic Covered Call": {
+        "description": "Replicates a covered call using futures. A long futures position is hedged with a short call to generate income.",
+        "group": "Future & Option Combinations",
+        "components": [
+            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
+        ]
+    },
+    "Synthetic Protective Put": {
+        "description": "Replicates a protective put. A long futures position is hedged with a long put to limit downside risk.",
+        "group": "Future & Option Combinations",
+        "components": [
+            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+        ]
+    },
+    "Futures Calendar Spread": {
+        "description": "Profits from time decay and a difference in price between near-term and long-term futures contracts.",
+        "group": "Future & Option Combinations",
+        "components": [
+            {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 1}
+        ]
+    }
+
+}

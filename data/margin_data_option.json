@@ -1,0 +1,1192 @@
+[
+    {
+        "Series": "S50U25C575",
+        "Position": "Short Options Outright",
+        "IM": 96935.5,
+        "MM": 69320.38,
+        "IntradayForceCloseMargin": 32146.18
+    },
+    {
+        "Series": "S50U25C600",
+        "Position": "Short Options Outright",
+        "IM": 88190.75,
+        "MM": 63174.07,
+        "IntradayForceCloseMargin": 29497.77
+    },
+    {
+        "Series": "S50U25C625",
+        "Position": "Short Options Outright",
+        "IM": 71346.0,
+        "MM": 54543.76,
+        "IntradayForceCloseMargin": 31925.36
+    },
+    {
+        "Series": "S50U25C640",
+        "Position": "Short Options Outright",
+        "IM": 74199.5,
+        "MM": 53340.22,
+        "IntradayForceCloseMargin": 25260.42
+    },
+    {
+        "Series": "S50U25C650",
+        "Position": "Short Options Outright",
+        "IM": 70701.25,
+        "MM": 50881.45,
+        "IntradayForceCloseMargin": 24200.95
+    },
+    {
+        "Series": "S50U25C660",
+        "Position": "Short Options Outright",
+        "IM": 55203.0,
+        "MM": 44742.68,
+        "IntradayForceCloseMargin": 30661.48
+    },
+    {
+        "Series": "S50U25C670",
+        "Position": "Short Options Outright",
+        "IM": 53204.75,
+        "MM": 42743.91,
+        "IntradayForceCloseMargin": 28662.01
+    },
+    {
+        "Series": "S50U25C675",
+        "Position": "Short Options Outright",
+        "IM": 45456.5,
+        "MM": 39675.14,
+        "IntradayForceCloseMargin": 31892.54
+    },
+    {
+        "Series": "S50U25C680",
+        "Position": "Short Options Outright",
+        "IM": 47456.5,
+        "MM": 39595.14,
+        "IntradayForceCloseMargin": 29012.54
+    },
+    {
+        "Series": "S50U25C690",
+        "Position": "Short Options Outright",
+        "IM": 38708.25,
+        "MM": 35526.37,
+        "IntradayForceCloseMargin": 31243.07
+    },
+    {
+        "Series": "S50U25C700",
+        "Position": "Short Options Outright",
+        "IM": 36111.75,
+        "MM": 33344.83,
+        "IntradayForceCloseMargin": 29620.13
+    },
+    {
+        "Series": "S50U25C710",
+        "Position": "Short Options Outright",
+        "IM": 41463.5,
+        "MM": 33600.06,
+        "IntradayForceCloseMargin": 23014.66
+    },
+    {
+        "Series": "S50U25C720",
+        "Position": "Short Options Outright",
+        "IM": 39465.25,
+        "MM": 31601.29,
+        "IntradayForceCloseMargin": 21015.19
+    },
+    {
+        "Series": "S50U25C725",
+        "Position": "Short Options Outright",
+        "IM": 31640.25,
+        "MM": 28508.29,
+        "IntradayForceCloseMargin": 24292.19
+    },
+    {
+        "Series": "S50U25C730",
+        "Position": "Short Options Outright",
+        "IM": 31692.0,
+        "MM": 27831.52,
+        "IntradayForceCloseMargin": 22634.72
+    },
+    {
+        "Series": "S50U25C740",
+        "Position": "Short Options Outright",
+        "IM": 29468.75,
+        "MM": 25763.75,
+        "IntradayForceCloseMargin": 20776.25
+    },
+    {
+        "Series": "S50U25C750",
+        "Position": "Short Options Outright",
+        "IM": 27022.25,
+        "MM": 23628.21,
+        "IntradayForceCloseMargin": 19059.31
+    },
+    {
+        "Series": "S50U25C760",
+        "Position": "Short Options Outright",
+        "IM": 24875.75,
+        "MM": 21584.67,
+        "IntradayForceCloseMargin": 17154.37
+    },
+    {
+        "Series": "S50U25C770",
+        "Position": "Short Options Outright",
+        "IM": 22716.0,
+        "MM": 19537.76,
+        "IntradayForceCloseMargin": 15259.36
+    },
+    {
+        "Series": "S50U25C775",
+        "Position": "Short Options Outright",
+        "IM": 21738.0,
+        "MM": 18547.28,
+        "IntradayForceCloseMargin": 14252.08
+    },
+    {
+        "Series": "S50U25C780",
+        "Position": "Short Options Outright",
+        "IM": 21226.75,
+        "MM": 17700.63,
+        "IntradayForceCloseMargin": 12953.93
+    },
+    {
+        "Series": "S50U25C790",
+        "Position": "Short Options Outright",
+        "IM": 18976.75,
+        "MM": 15637.83,
+        "IntradayForceCloseMargin": 11143.13
+    },
+    {
+        "Series": "S50U25C800",
+        "Position": "Short Options Outright",
+        "IM": 16797.0,
+        "MM": 13612.52,
+        "IntradayForceCloseMargin": 9325.72
+    },
+    {
+        "Series": "S50U25C810",
+        "Position": "Short Options Outright",
+        "IM": 14699.5,
+        "MM": 11645.02,
+        "IntradayForceCloseMargin": 7533.22
+    },
+    {
+        "Series": "S50U25C820",
+        "Position": "Short Options Outright",
+        "IM": 12315.0,
+        "MM": 9642.2,
+        "IntradayForceCloseMargin": 6044.2
+    },
+    {
+        "Series": "S50U25C825",
+        "Position": "Short Options Outright",
+        "IM": 11248.75,
+        "MM": 8708.55,
+        "IntradayForceCloseMargin": 5289.05
+    },
+    {
+        "Series": "S50U25C830",
+        "Position": "Short Options Outright",
+        "IM": 10306.0,
+        "MM": 7897.36,
+        "IntradayForceCloseMargin": 4654.96
+    },
+    {
+        "Series": "S50U25C840",
+        "Position": "Short Options Outright",
+        "IM": 8900.25,
+        "MM": 6683.49,
+        "IntradayForceCloseMargin": 3699.39
+    },
+    {
+        "Series": "S50U25C850",
+        "Position": "Short Options Outright",
+        "IM": 7587.0,
+        "MM": 5588.12,
+        "IntradayForceCloseMargin": 2897.32
+    },
+    {
+        "Series": "S50U25C860",
+        "Position": "Short Options Outright",
+        "IM": 6382.75,
+        "MM": 4628.79,
+        "IntradayForceCloseMargin": 2267.69
+    },
+    {
+        "Series": "S50U25C870",
+        "Position": "Short Options Outright",
+        "IM": 5273.0,
+        "MM": 3777.48,
+        "IntradayForceCloseMargin": 1764.28
+    },
+    {
+        "Series": "S50U25C875",
+        "Position": "Short Options Outright",
+        "IM": 4790.0,
+        "MM": 3438.0,
+        "IntradayForceCloseMargin": 1618.0
+    },
+    {
+        "Series": "S50U25C880",
+        "Position": "Short Options Outright",
+        "IM": 4283.0,
+        "MM": 3057.88,
+        "IntradayForceCloseMargin": 1408.68
+    },
+    {
+        "Series": "S50U25C900",
+        "Position": "Short Options Outright",
+        "IM": 2557.25,
+        "MM": 1815.21,
+        "IntradayForceCloseMargin": 816.31
+    },
+    {
+        "Series": "S50U25P575",
+        "Position": "Short Options Outright",
+        "IM": 230.0,
+        "MM": 167.6,
+        "IntradayForceCloseMargin": 83.6
+    },
+    {
+        "Series": "S50U25P600",
+        "Position": "Short Options Outright",
+        "IM": 250.0,
+        "MM": 187.6,
+        "IntradayForceCloseMargin": 103.6
+    },
+    {
+        "Series": "S50U25P625",
+        "Position": "Short Options Outright",
+        "IM": 250.0,
+        "MM": 187.6,
+        "IntradayForceCloseMargin": 103.6
+    },
+    {
+        "Series": "S50U25P640",
+        "Position": "Short Options Outright",
+        "IM": 270.0,
+        "MM": 207.6,
+        "IntradayForceCloseMargin": 123.6
+    },
+    {
+        "Series": "S50U25P650",
+        "Position": "Short Options Outright",
+        "IM": 270.0,
+        "MM": 207.6,
+        "IntradayForceCloseMargin": 123.6
+    },
+    {
+        "Series": "S50U25P660",
+        "Position": "Short Options Outright",
+        "IM": 270.0,
+        "MM": 207.6,
+        "IntradayForceCloseMargin": 123.6
+    },
+    {
+        "Series": "S50U25P670",
+        "Position": "Short Options Outright",
+        "IM": 290.0,
+        "MM": 227.6,
+        "IntradayForceCloseMargin": 143.6
+    },
+    {
+        "Series": "S50U25P675",
+        "Position": "Short Options Outright",
+        "IM": 230.0,
+        "MM": 167.6,
+        "IntradayForceCloseMargin": 83.6
+    },
+    {
+        "Series": "S50U25P680",
+        "Position": "Short Options Outright",
+        "IM": 310.0,
+        "MM": 247.6,
+        "IntradayForceCloseMargin": 163.6
+    },
+    {
+        "Series": "S50U25P690",
+        "Position": "Short Options Outright",
+        "IM": 290.0,
+        "MM": 227.6,
+        "IntradayForceCloseMargin": 143.6
+    },
+    {
+        "Series": "S50U25P700",
+        "Position": "Short Options Outright",
+        "IM": 250.0,
+        "MM": 187.6,
+        "IntradayForceCloseMargin": 103.6
+    },
+    {
+        "Series": "S50U25P710",
+        "Position": "Short Options Outright",
+        "IM": 290.0,
+        "MM": 227.6,
+        "IntradayForceCloseMargin": 143.6
+    },
+    {
+        "Series": "S50U25P720",
+        "Position": "Short Options Outright",
+        "IM": 249.25,
+        "MM": 181.13,
+        "IntradayForceCloseMargin": 89.43
+    },
+    {
+        "Series": "S50U25P725",
+        "Position": "Short Options Outright",
+        "IM": 362.0,
+        "MM": 266.32,
+        "IntradayForceCloseMargin": 137.52
+    },
+    {
+        "Series": "S50U25P730",
+        "Position": "Short Options Outright",
+        "IM": 495.0,
+        "MM": 359.8,
+        "IntradayForceCloseMargin": 177.8
+    },
+    {
+        "Series": "S50U25P740",
+        "Position": "Short Options Outright",
+        "IM": 873.75,
+        "MM": 631.95,
+        "IntradayForceCloseMargin": 306.45
+    },
+    {
+        "Series": "S50U25P750",
+        "Position": "Short Options Outright",
+        "IM": 1414.25,
+        "MM": 1023.73,
+        "IntradayForceCloseMargin": 498.03
+    },
+    {
+        "Series": "S50U25P760",
+        "Position": "Short Options Outright",
+        "IM": 2107.0,
+        "MM": 1522.52,
+        "IntradayForceCloseMargin": 735.72
+    },
+    {
+        "Series": "S50U25P770",
+        "Position": "Short Options Outright",
+        "IM": 2940.5,
+        "MM": 2126.18,
+        "IntradayForceCloseMargin": 1029.98
+    },
+    {
+        "Series": "S50U25P775",
+        "Position": "Short Options Outright",
+        "IM": 3402.25,
+        "MM": 2462.61,
+        "IntradayForceCloseMargin": 1197.71
+    },
+    {
+        "Series": "S50U25P780",
+        "Position": "Short Options Outright",
+        "IM": 3873.75,
+        "MM": 2799.95,
+        "IntradayForceCloseMargin": 1354.45
+    },
+    {
+        "Series": "S50U25P790",
+        "Position": "Short Options Outright",
+        "IM": 4951.25,
+        "MM": 3622.65,
+        "IntradayForceCloseMargin": 1834.15
+    },
+    {
+        "Series": "S50U25P800",
+        "Position": "Short Options Outright",
+        "IM": 6114.75,
+        "MM": 4535.51,
+        "IntradayForceCloseMargin": 2409.61
+    },
+    {
+        "Series": "S50U25P810",
+        "Position": "Short Options Outright",
+        "IM": 7413.25,
+        "MM": 5614.57,
+        "IntradayForceCloseMargin": 3193.27
+    },
+    {
+        "Series": "S50U25P820",
+        "Position": "Short Options Outright",
+        "IM": 8768.0,
+        "MM": 6762.88,
+        "IntradayForceCloseMargin": 4063.68
+    },
+    {
+        "Series": "S50U25P825",
+        "Position": "Short Options Outright",
+        "IM": 9443.25,
+        "MM": 7332.57,
+        "IntradayForceCloseMargin": 4491.27
+    },
+    {
+        "Series": "S50U25P830",
+        "Position": "Short Options Outright",
+        "IM": 10272.25,
+        "MM": 8105.41,
+        "IntradayForceCloseMargin": 5188.51
+    },
+    {
+        "Series": "S50U25P840",
+        "Position": "Short Options Outright",
+        "IM": 11795.5,
+        "MM": 9473.18,
+        "IntradayForceCloseMargin": 6346.98
+    },
+    {
+        "Series": "S50U25P850",
+        "Position": "Short Options Outright",
+        "IM": 13575.25,
+        "MM": 11181.69,
+        "IntradayForceCloseMargin": 7959.59
+    },
+    {
+        "Series": "S50U25P860",
+        "Position": "Short Options Outright",
+        "IM": 15489.75,
+        "MM": 13068.11,
+        "IntradayForceCloseMargin": 9808.21
+    },
+    {
+        "Series": "S50U25P870",
+        "Position": "Short Options Outright",
+        "IM": 17423.25,
+        "MM": 14979.77,
+        "IntradayForceCloseMargin": 11690.47
+    },
+    {
+        "Series": "S50U25P875",
+        "Position": "Short Options Outright",
+        "IM": 24357.5,
+        "MM": 17446.7,
+        "IntradayForceCloseMargin": 8143.7
+    },
+    {
+        "Series": "S50U25P880",
+        "Position": "Short Options Outright",
+        "IM": 19364.5,
+        "MM": 16902.82,
+        "IntradayForceCloseMargin": 13589.02
+    },
+    {
+        "Series": "S50U25P900",
+        "Position": "Short Options Outright",
+        "IM": 23317.0,
+        "MM": 20839.72,
+        "IntradayForceCloseMargin": 17504.92
+    },
+    {
+        "Series": "S50V25C750",
+        "Position": "Short Options Outright",
+        "IM": 26974.5,
+        "MM": 23410.42,
+        "IntradayForceCloseMargin": 18612.62
+    },
+    {
+        "Series": "S50V25C760",
+        "Position": "Short Options Outright",
+        "IM": 24954.25,
+        "MM": 21443.73,
+        "IntradayForceCloseMargin": 16718.03
+    },
+    {
+        "Series": "S50V25C770",
+        "Position": "Short Options Outright",
+        "IM": 22909.75,
+        "MM": 19489.71,
+        "IntradayForceCloseMargin": 14885.81
+    },
+    {
+        "Series": "S50V25C780",
+        "Position": "Short Options Outright",
+        "IM": 20863.75,
+        "MM": 17564.35,
+        "IntradayForceCloseMargin": 13122.85
+    },
+    {
+        "Series": "S50V25C790",
+        "Position": "Short Options Outright",
+        "IM": 18839.0,
+        "MM": 15683.64,
+        "IntradayForceCloseMargin": 11436.04
+    },
+    {
+        "Series": "S50V25C800",
+        "Position": "Short Options Outright",
+        "IM": 16383.5,
+        "MM": 13720.06,
+        "IntradayForceCloseMargin": 10134.66
+    },
+    {
+        "Series": "S50V25C810",
+        "Position": "Short Options Outright",
+        "IM": 14485.25,
+        "MM": 11987.69,
+        "IntradayForceCloseMargin": 8625.59
+    },
+    {
+        "Series": "S50V25C820",
+        "Position": "Short Options Outright",
+        "IM": 12619.0,
+        "MM": 10337.24,
+        "IntradayForceCloseMargin": 7265.64
+    },
+    {
+        "Series": "S50V25C830",
+        "Position": "Short Options Outright",
+        "IM": 10983.75,
+        "MM": 8849.15,
+        "IntradayForceCloseMargin": 5975.65
+    },
+    {
+        "Series": "S50V25C840",
+        "Position": "Short Options Outright",
+        "IM": 9521.0,
+        "MM": 7517.96,
+        "IntradayForceCloseMargin": 4821.56
+    },
+    {
+        "Series": "S50V25C850",
+        "Position": "Short Options Outright",
+        "IM": 8222.75,
+        "MM": 6385.59,
+        "IntradayForceCloseMargin": 3912.49
+    },
+    {
+        "Series": "S50V25C860",
+        "Position": "Short Options Outright",
+        "IM": 7039.0,
+        "MM": 5381.24,
+        "IntradayForceCloseMargin": 3149.64
+    },
+    {
+        "Series": "S50V25C870",
+        "Position": "Short Options Outright",
+        "IM": 6007.0,
+        "MM": 4548.92,
+        "IntradayForceCloseMargin": 2586.12
+    },
+    {
+        "Series": "S50V25C880",
+        "Position": "Short Options Outright",
+        "IM": 5032.75,
+        "MM": 3757.19,
+        "IntradayForceCloseMargin": 2040.09
+    },
+    {
+        "Series": "S50V25P750",
+        "Position": "Short Options Outright",
+        "IM": 2410.75,
+        "MM": 1813.27,
+        "IntradayForceCloseMargin": 1008.97
+    },
+    {
+        "Series": "S50V25P760",
+        "Position": "Short Options Outright",
+        "IM": 3141.0,
+        "MM": 2385.96,
+        "IntradayForceCloseMargin": 1369.56
+    },
+    {
+        "Series": "S50V25P770",
+        "Position": "Short Options Outright",
+        "IM": 4050.25,
+        "MM": 3143.89,
+        "IntradayForceCloseMargin": 1923.79
+    },
+    {
+        "Series": "S50V25P780",
+        "Position": "Short Options Outright",
+        "IM": 4939.75,
+        "MM": 3828.51,
+        "IntradayForceCloseMargin": 2332.61
+    },
+    {
+        "Series": "S50V25P790",
+        "Position": "Short Options Outright",
+        "IM": 5977.75,
+        "MM": 4670.99,
+        "IntradayForceCloseMargin": 2911.89
+    },
+    {
+        "Series": "S50V25P800",
+        "Position": "Short Options Outright",
+        "IM": 7267.75,
+        "MM": 5815.39,
+        "IntradayForceCloseMargin": 3860.29
+    },
+    {
+        "Series": "S50V25P810",
+        "Position": "Short Options Outright",
+        "IM": 8455.5,
+        "MM": 6798.78,
+        "IntradayForceCloseMargin": 4568.58
+    },
+    {
+        "Series": "S50V25P820",
+        "Position": "Short Options Outright",
+        "IM": 9826.75,
+        "MM": 8006.23,
+        "IntradayForceCloseMargin": 5555.53
+    },
+    {
+        "Series": "S50V25P830",
+        "Position": "Short Options Outright",
+        "IM": 11238.0,
+        "MM": 9253.68,
+        "IntradayForceCloseMargin": 6582.48
+    },
+    {
+        "Series": "S50V25P840",
+        "Position": "Short Options Outright",
+        "IM": 12809.25,
+        "MM": 10702.73,
+        "IntradayForceCloseMargin": 7867.03
+    },
+    {
+        "Series": "S50V25P850",
+        "Position": "Short Options Outright",
+        "IM": 14438.5,
+        "MM": 12222.26,
+        "IntradayForceCloseMargin": 9238.86
+    },
+    {
+        "Series": "S50V25P860",
+        "Position": "Short Options Outright",
+        "IM": 16141.25,
+        "MM": 13835.05,
+        "IntradayForceCloseMargin": 10730.55
+    },
+    {
+        "Series": "S50V25P870",
+        "Position": "Short Options Outright",
+        "IM": 18123.0,
+        "MM": 15816.28,
+        "IntradayForceCloseMargin": 12711.08
+    },
+    {
+        "Series": "S50V25P880",
+        "Position": "Short Options Outright",
+        "IM": 19965.75,
+        "MM": 17610.67,
+        "IntradayForceCloseMargin": 14440.37
+    },
+    {
+        "Series": "S50X25C760",
+        "Position": "Short Options Outright",
+        "IM": 24723.5,
+        "MM": 21352.86,
+        "IntradayForceCloseMargin": 16815.46
+    },
+    {
+        "Series": "S50X25C770",
+        "Position": "Short Options Outright",
+        "IM": 22764.0,
+        "MM": 19494.24,
+        "IntradayForceCloseMargin": 15092.64
+    },
+    {
+        "Series": "S50X25C780",
+        "Position": "Short Options Outright",
+        "IM": 20827.5,
+        "MM": 17681.5,
+        "IntradayForceCloseMargin": 13446.5
+    },
+    {
+        "Series": "S50X25C790",
+        "Position": "Short Options Outright",
+        "IM": 18933.25,
+        "MM": 15928.17,
+        "IntradayForceCloseMargin": 11882.87
+    },
+    {
+        "Series": "S50X25C800",
+        "Position": "Short Options Outright",
+        "IM": 16438.75,
+        "MM": 14044.15,
+        "IntradayForceCloseMargin": 10820.65
+    },
+    {
+        "Series": "S50X25C810",
+        "Position": "Short Options Outright",
+        "IM": 14728.25,
+        "MM": 12461.57,
+        "IntradayForceCloseMargin": 9410.27
+    },
+    {
+        "Series": "S50X25C820",
+        "Position": "Short Options Outright",
+        "IM": 13112.5,
+        "MM": 10975.3,
+        "IntradayForceCloseMargin": 8098.3
+    },
+    {
+        "Series": "S50X25C830",
+        "Position": "Short Options Outright",
+        "IM": 11572.0,
+        "MM": 9583.52,
+        "IntradayForceCloseMargin": 6906.72
+    },
+    {
+        "Series": "S50X25C840",
+        "Position": "Short Options Outright",
+        "IM": 10190.75,
+        "MM": 8345.27,
+        "IntradayForceCloseMargin": 5860.97
+    },
+    {
+        "Series": "S50X25C850",
+        "Position": "Short Options Outright",
+        "IM": 8930.5,
+        "MM": 7221.78,
+        "IntradayForceCloseMargin": 4921.58
+    },
+    {
+        "Series": "S50X25C860",
+        "Position": "Short Options Outright",
+        "IM": 7769.25,
+        "MM": 6203.53,
+        "IntradayForceCloseMargin": 4095.83
+    },
+    {
+        "Series": "S50X25C870",
+        "Position": "Short Options Outright",
+        "IM": 6702.75,
+        "MM": 5281.59,
+        "IntradayForceCloseMargin": 3368.49
+    },
+    {
+        "Series": "S50X25C880",
+        "Position": "Short Options Outright",
+        "IM": 5763.0,
+        "MM": 4496.28,
+        "IntradayForceCloseMargin": 2791.08
+    },
+    {
+        "Series": "S50X25P760",
+        "Position": "Short Options Outright",
+        "IM": 3885.75,
+        "MM": 3028.27,
+        "IntradayForceCloseMargin": 1873.97
+    },
+    {
+        "Series": "S50X25P770",
+        "Position": "Short Options Outright",
+        "IM": 4761.0,
+        "MM": 3756.36,
+        "IntradayForceCloseMargin": 2403.96
+    },
+    {
+        "Series": "S50X25P780",
+        "Position": "Short Options Outright",
+        "IM": 5870.25,
+        "MM": 4755.89,
+        "IntradayForceCloseMargin": 3255.79
+    },
+    {
+        "Series": "S50X25P790",
+        "Position": "Short Options Outright",
+        "IM": 6929.25,
+        "MM": 5654.73,
+        "IntradayForceCloseMargin": 3939.03
+    },
+    {
+        "Series": "S50X25P800",
+        "Position": "Short Options Outright",
+        "IM": 8084.75,
+        "MM": 6651.11,
+        "IntradayForceCloseMargin": 4721.21
+    },
+    {
+        "Series": "S50X25P810",
+        "Position": "Short Options Outright",
+        "IM": 9320.25,
+        "MM": 7727.49,
+        "IntradayForceCloseMargin": 5583.39
+    },
+    {
+        "Series": "S50X25P820",
+        "Position": "Short Options Outright",
+        "IM": 10655.5,
+        "MM": 8915.58,
+        "IntradayForceCloseMargin": 6573.38
+    },
+    {
+        "Series": "S50X25P830",
+        "Position": "Short Options Outright",
+        "IM": 12066.25,
+        "MM": 10186.45,
+        "IntradayForceCloseMargin": 7655.95
+    },
+    {
+        "Series": "S50X25P840",
+        "Position": "Short Options Outright",
+        "IM": 13574.0,
+        "MM": 11573.04,
+        "IntradayForceCloseMargin": 8879.44
+    },
+    {
+        "Series": "S50X25P850",
+        "Position": "Short Options Outright",
+        "IM": 15146.75,
+        "MM": 13035.03,
+        "IntradayForceCloseMargin": 10192.33
+    },
+    {
+        "Series": "S50X25P860",
+        "Position": "Short Options Outright",
+        "IM": 16788.75,
+        "MM": 14581.35,
+        "IntradayForceCloseMargin": 11609.85
+    },
+    {
+        "Series": "S50X25P870",
+        "Position": "Short Options Outright",
+        "IM": 18753.0,
+        "MM": 16550.28,
+        "IntradayForceCloseMargin": 13585.08
+    },
+    {
+        "Series": "S50X25P880",
+        "Position": "Short Options Outright",
+        "IM": 20545.5,
+        "MM": 18285.58,
+        "IntradayForceCloseMargin": 15243.38
+    },
+    {
+        "Series": "S50Z25C650",
+        "Position": "Short Options Outright",
+        "IM": 46254.5,
+        "MM": 42607.22,
+        "IntradayForceCloseMargin": 37697.42
+    },
+    {
+        "Series": "S50Z25C660",
+        "Position": "Short Options Outright",
+        "IM": 67875.75,
+        "MM": 47861.47,
+        "IntradayForceCloseMargin": 20919.17
+    },
+    {
+        "Series": "S50Z25C670",
+        "Position": "Short Options Outright",
+        "IM": 63900.75,
+        "MM": 45269.67,
+        "IntradayForceCloseMargin": 20189.37
+    },
+    {
+        "Series": "S50Z25C680",
+        "Position": "Short Options Outright",
+        "IM": 40284.5,
+        "MM": 36658.02,
+        "IntradayForceCloseMargin": 31776.22
+    },
+    {
+        "Series": "S50Z25C690",
+        "Position": "Short Options Outright",
+        "IM": 38300.75,
+        "MM": 34687.27,
+        "IntradayForceCloseMargin": 29822.97
+    },
+    {
+        "Series": "S50Z25C700",
+        "Position": "Short Options Outright",
+        "IM": 35393.0,
+        "MM": 32441.48,
+        "IntradayForceCloseMargin": 28468.28
+    },
+    {
+        "Series": "S50Z25C710",
+        "Position": "Short Options Outright",
+        "IM": 33353.25,
+        "MM": 30472.97,
+        "IntradayForceCloseMargin": 26595.67
+    },
+    {
+        "Series": "S50Z25C720",
+        "Position": "Short Options Outright",
+        "IM": 32368.5,
+        "MM": 28841.86,
+        "IntradayForceCloseMargin": 24094.46
+    },
+    {
+        "Series": "S50Z25C730",
+        "Position": "Short Options Outright",
+        "IM": 29091.0,
+        "MM": 26526.36,
+        "IntradayForceCloseMargin": 23073.96
+    },
+    {
+        "Series": "S50Z25C740",
+        "Position": "Short Options Outright",
+        "IM": 34286.25,
+        "MM": 26832.05,
+        "IntradayForceCloseMargin": 16797.55
+    },
+    {
+        "Series": "S50Z25C750",
+        "Position": "Short Options Outright",
+        "IM": 37179.75,
+        "MM": 26458.91,
+        "IntradayForceCloseMargin": 12027.01
+    },
+    {
+        "Series": "S50Z25C760",
+        "Position": "Short Options Outright",
+        "IM": 23431.75,
+        "MM": 21080.83,
+        "IntradayForceCloseMargin": 17916.13
+    },
+    {
+        "Series": "S50Z25C770",
+        "Position": "Short Options Outright",
+        "IM": 31075.75,
+        "MM": 22168.67,
+        "IntradayForceCloseMargin": 10178.37
+    },
+    {
+        "Series": "S50Z25C780",
+        "Position": "Short Options Outright",
+        "IM": 20156.25,
+        "MM": 17673.25,
+        "IntradayForceCloseMargin": 14330.75
+    },
+    {
+        "Series": "S50Z25C790",
+        "Position": "Short Options Outright",
+        "IM": 18207.5,
+        "MM": 15976.7,
+        "IntradayForceCloseMargin": 12973.7
+    },
+    {
+        "Series": "S50Z25C800",
+        "Position": "Short Options Outright",
+        "IM": 16668.75,
+        "MM": 14586.15,
+        "IntradayForceCloseMargin": 11782.65
+    },
+    {
+        "Series": "S50Z25C810",
+        "Position": "Short Options Outright",
+        "IM": 15034.5,
+        "MM": 13009.62,
+        "IntradayForceCloseMargin": 10283.82
+    },
+    {
+        "Series": "S50Z25C820",
+        "Position": "Short Options Outright",
+        "IM": 13549.75,
+        "MM": 11585.71,
+        "IntradayForceCloseMargin": 8941.81
+    },
+    {
+        "Series": "S50Z25C830",
+        "Position": "Short Options Outright",
+        "IM": 12205.75,
+        "MM": 10308.27,
+        "IntradayForceCloseMargin": 7753.97
+    },
+    {
+        "Series": "S50Z25C840",
+        "Position": "Short Options Outright",
+        "IM": 10843.0,
+        "MM": 9118.68,
+        "IntradayForceCloseMargin": 6797.48
+    },
+    {
+        "Series": "S50Z25C850",
+        "Position": "Short Options Outright",
+        "IM": 9669.75,
+        "MM": 7996.91,
+        "IntradayForceCloseMargin": 5745.01
+    },
+    {
+        "Series": "S50Z25C860",
+        "Position": "Short Options Outright",
+        "IM": 8524.5,
+        "MM": 6978.02,
+        "IntradayForceCloseMargin": 4896.22
+    },
+    {
+        "Series": "S50Z25C870",
+        "Position": "Short Options Outright",
+        "IM": 7540.25,
+        "MM": 6072.29,
+        "IntradayForceCloseMargin": 4096.19
+    },
+    {
+        "Series": "S50Z25C880",
+        "Position": "Short Options Outright",
+        "IM": 6552.0,
+        "MM": 5229.12,
+        "IntradayForceCloseMargin": 3448.32
+    },
+    {
+        "Series": "S50Z25P650",
+        "Position": "Short Options Outright",
+        "IM": 630.0,
+        "MM": 567.6,
+        "IntradayForceCloseMargin": 483.6
+    },
+    {
+        "Series": "S50Z25P660",
+        "Position": "Short Options Outright",
+        "IM": 710.0,
+        "MM": 647.6,
+        "IntradayForceCloseMargin": 563.6
+    },
+    {
+        "Series": "S50Z25P670",
+        "Position": "Short Options Outright",
+        "IM": 810.0,
+        "MM": 747.6,
+        "IntradayForceCloseMargin": 663.6
+    },
+    {
+        "Series": "S50Z25P680",
+        "Position": "Short Options Outright",
+        "IM": 970.25,
+        "MM": 895.89,
+        "IntradayForceCloseMargin": 795.79
+    },
+    {
+        "Series": "S50Z25P690",
+        "Position": "Short Options Outright",
+        "IM": 1234.75,
+        "MM": 1111.51,
+        "IntradayForceCloseMargin": 945.61
+    },
+    {
+        "Series": "S50Z25P700",
+        "Position": "Short Options Outright",
+        "IM": 1519.75,
+        "MM": 1323.71,
+        "IntradayForceCloseMargin": 1059.81
+    },
+    {
+        "Series": "S50Z25P710",
+        "Position": "Short Options Outright",
+        "IM": 1946.25,
+        "MM": 1688.85,
+        "IntradayForceCloseMargin": 1342.35
+    },
+    {
+        "Series": "S50Z25P720",
+        "Position": "Short Options Outright",
+        "IM": 2440.0,
+        "MM": 2107.2,
+        "IntradayForceCloseMargin": 1659.2
+    },
+    {
+        "Series": "S50Z25P730",
+        "Position": "Short Options Outright",
+        "IM": 2957.0,
+        "MM": 2518.12,
+        "IntradayForceCloseMargin": 1927.32
+    },
+    {
+        "Series": "S50Z25P740",
+        "Position": "Short Options Outright",
+        "IM": 3565.5,
+        "MM": 3011.18,
+        "IntradayForceCloseMargin": 2264.98
+    },
+    {
+        "Series": "S50Z25P750",
+        "Position": "Short Options Outright",
+        "IM": 4453.75,
+        "MM": 3837.55,
+        "IntradayForceCloseMargin": 3008.05
+    },
+    {
+        "Series": "S50Z25P760",
+        "Position": "Short Options Outright",
+        "IM": 5116.5,
+        "MM": 4327.14,
+        "IntradayForceCloseMargin": 3264.54
+    },
+    {
+        "Series": "S50Z25P770",
+        "Position": "Short Options Outright",
+        "IM": 5797.25,
+        "MM": 4805.61,
+        "IntradayForceCloseMargin": 3470.71
+    },
+    {
+        "Series": "S50Z25P780",
+        "Position": "Short Options Outright",
+        "IM": 6760.25,
+        "MM": 5625.09,
+        "IntradayForceCloseMargin": 4096.99
+    },
+    {
+        "Series": "S50Z25P790",
+        "Position": "Short Options Outright",
+        "IM": 7886.25,
+        "MM": 6630.45,
+        "IntradayForceCloseMargin": 4939.95
+    },
+    {
+        "Series": "S50Z25P800",
+        "Position": "Short Options Outright",
+        "IM": 8970.5,
+        "MM": 7552.98,
+        "IntradayForceCloseMargin": 5644.78
+    },
+    {
+        "Series": "S50Z25P810",
+        "Position": "Short Options Outright",
+        "IM": 10121.75,
+        "MM": 8540.43,
+        "IntradayForceCloseMargin": 6411.73
+    },
+    {
+        "Series": "S50Z25P820",
+        "Position": "Short Options Outright",
+        "IM": 11439.25,
+        "MM": 9727.93,
+        "IntradayForceCloseMargin": 7424.23
+    },
+    {
+        "Series": "S50Z25P830",
+        "Position": "Short Options Outright",
+        "IM": 12881.5,
+        "MM": 11062.54,
+        "IntradayForceCloseMargin": 8613.94
+    },
+    {
+        "Series": "S50Z25P840",
+        "Position": "Short Options Outright",
+        "IM": 14329.25,
+        "MM": 12389.13,
+        "IntradayForceCloseMargin": 9777.43
+    },
+    {
+        "Series": "S50Z25P850",
+        "Position": "Short Options Outright",
+        "IM": 15900.75,
+        "MM": 13868.07,
+        "IntradayForceCloseMargin": 11131.77
+    },
+    {
+        "Series": "S50Z25P860",
+        "Position": "Short Options Outright",
+        "IM": 17478.5,
+        "MM": 15345.46,
+        "IntradayForceCloseMargin": 12474.06
+    },
+    {
+        "Series": "S50Z25P870",
+        "Position": "Short Options Outright",
+        "IM": 19421.75,
+        "MM": 17299.63,
+        "IntradayForceCloseMargin": 14442.93
+    },
+    {
+        "Series": "S50Z25P880",
+        "Position": "Short Options Outright",
+        "IM": 21109.5,
+        "MM": 18907.82,
+        "IntradayForceCloseMargin": 15944.02
+    }
+]

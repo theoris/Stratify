@@ -1,0 +1,23 @@
+[
+    {
+        "Series": "GD",
+        "Position": "Spread",
+        "IM": 31080.0,
+        "MM": 21844.8,
+        "IntradayForceCloseMargin": 9412.8
+    },
+    {
+        "Series": "GDU25",
+        "Position": "Outright",
+        "IM": 15540.0,
+        "MM": 10922.4,
+        "IntradayForceCloseMargin": 4706.4
+    },
+    {
+        "Series": "GDZ25",
+        "Position": "Outright",
+        "IM": 15540.0,
+        "MM": 10922.4,
+        "IntradayForceCloseMargin": 4706.4
+    }
+]

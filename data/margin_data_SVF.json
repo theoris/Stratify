@@ -1,0 +1,23 @@
+[
+    {
+        "Series": "SVF",
+        "Position": "Spread",
+        "IM": 2563.75,
+        "MM": 1801.95,
+        "IntradayForceCloseMargin": 776.45
+    },
+    {
+        "Series": "SVFU25",
+        "Position": "Outright",
+        "IM": 10255.0,
+        "MM": 7207.8,
+        "IntradayForceCloseMargin": 3105.8
+    },
+    {
+        "Series": "SVFZ25",
+        "Position": "Outright",
+        "IM": 10255.0,
+        "MM": 7207.8,
+        "IntradayForceCloseMargin": 3105.8
+    }
+]

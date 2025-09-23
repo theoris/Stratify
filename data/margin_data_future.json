@@ -1,0 +1,51 @@
+[
+    {
+        "Series": "SET50",
+        "Position": "Spread",
+        "IM": 2520.0,
+        "MM": 1771.2,
+        "IntradayForceCloseMargin": 763.2
+    },
+    {
+        "Series": "S50U25",
+        "Position": "Outright",
+        "IM": 10080.0,
+        "MM": 7084.8,
+        "IntradayForceCloseMargin": 3052.8
+    },
+    {
+        "Series": "S50V25",
+        "Position": "Outright",
+        "IM": 10080.0,
+        "MM": 7084.8,
+        "IntradayForceCloseMargin": 3052.8
+    },
+    {
+        "Series": "S50X25",
+        "Position": "Outright",
+        "IM": 10080.0,
+        "MM": 7084.8,
+        "IntradayForceCloseMargin": 3052.8
+    },
+    {
+        "Series": "S50Z25",
+        "Position": "Outright",
+        "IM": 10080.0,
+        "MM": 7084.8,
+        "IntradayForceCloseMargin": 3052.8
+    },
+    {
+        "Series": "S50H26",
+        "Position": "Outright",
+        "IM": 10080.0,
+        "MM": 7084.8,
+        "IntradayForceCloseMargin": 3052.8
+    },
+    {
+        "Series": "S50M26",
+        "Position": "Outright",
+        "IM": 10080.0,
+        "MM": 7084.8,
+        "IntradayForceCloseMargin": 3052.8
+    }
+]

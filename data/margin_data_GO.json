@@ -1,0 +1,23 @@
+[
+    {
+        "Series": "GO",
+        "Position": "Spread",
+        "IM": 11620.0,
+        "MM": 8167.2,
+        "IntradayForceCloseMargin": 3519.2
+    },
+    {
+        "Series": "GOU25",
+        "Position": "Outright",
+        "IM": 46480.0,
+        "MM": 32668.8,
+        "IntradayForceCloseMargin": 14076.8
+    },
+    {
+        "Series": "GOZ25",
+        "Position": "Outright",
+        "IM": 46480.0,
+        "MM": 32668.8,
+        "IntradayForceCloseMargin": 14076.8
+    }
+]
