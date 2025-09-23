@@ -32,7 +32,8 @@ else:
     user_email = st.session_state["email"]
     st.info(f"Logged in as: {user_email} ({st.session_state.get('role','viewer')})")
 
-
+user_email = st.session_state.get("email", None)
+user_role = st.session_state.get("role", "guest")
 
 # Define permissions
 is_logged_in = user_email is not None
