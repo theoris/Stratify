@@ -878,7 +878,7 @@ st.download_button("Download payoff_full.csv", data=pd.DataFrame({"Spot": S_rang
 st.subheader("💾 Save Strategy")
 strategy_name = st.text_input("Strategy name")
 
-if st.button("Save Strategy"):
+if st.button("Save Strategy", disabled=disabled)):
     if not user_email:
         st.error("⚠️ Please login first.")
     elif not strategy_name.strip():

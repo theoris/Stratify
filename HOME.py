@@ -52,6 +52,14 @@ st.info("👈 Choose an index page from the sidebar to get started!")
 # --- Sidebar ---
 # st.sidebar.title("🔑 Authentication")
 
+user_role = st.session_state.get("role", "guest")
+is_trader_or_admin = user_role in ["trader", "admin"]
+if not is_trader_or_admin:
+    with st.sidebar.expander("donate detail for advance usage"):
+        st.sidebar.info("via USDT (BEP20) : 0x696D4c64d126E6d4fdB704aCd1e8f7B1d443c910")
+        st.sidebar.info("qrcode")
+        st.sidebar.image("img/donate.png", caption="0x696D4c64d126E6d4fdB704aCd1e8f7B1d443c910")
+
 if "email" not in st.session_state:
     # Show Google login button
     result = oauth2.authorize_button(
