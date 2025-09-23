@@ -4,32 +4,27 @@ import os
 from supabase_client import supabase
 from streamlit_oauth import OAuth2Component
 
+# --- Load secrets ---
 GOOGLE_CLIENT_ID = st.secrets["GOOGLE_CLIENT_ID"]
 GOOGLE_CLIENT_SECRET = st.secrets["GOOGLE_CLIENT_SECRET"]
 
 AUTHORIZE_URL = "https://accounts.google.com/o/oauth2/auth"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 
+# --- Redirect URI (local vs deployed) ---
 REDIRECT_URI = (
     "http://localhost:8501"
     if "LOCAL_DEV" in st.secrets
-    else "https://stratifyth.streamlit.app"
+    else "https://your-app-name.streamlit.app"
 )
 
+# --- Create OAuth2 object ---
 oauth2 = OAuth2Component(
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET,
     AUTHORIZE_URL,
     TOKEN_URL,
 )
-
-# 🔹 Call with redirect + scope explicitly
-result = oauth2.authorize_button(
-    "Login with Google",
-    redirect_uri=REDIRECT_URI,
-    scope="openid email profile",
-)
-
 
 st.set_page_config(page_title="Options & Futures Strategy Tool", layout="wide",page_icon="📖")
 st.title("📊 Options & Futures Strategy Tool")
@@ -49,33 +44,26 @@ Each page contains the **same tool structure** but loads different JSON market &
 
 st.info("👈 Choose an index page from the sidebar to get started!")
 
-
+# --- Sidebar ---
 st.sidebar.title("🔑 Authentication")
-# If user already logged in → show welcome + logout
+
 if "email" not in st.session_state:
-    result = oauth2.authorize_button("Login with Google")
+    # 🔹 MUST include redirect_uri + scope
+    result = oauth2.authorize_button(
+        "Login with Google",
+        redirect_uri=REDIRECT_URI,
+        scope="openid email profile",
+    )
+
     if result:
         email = result["id_token"]["email"]
         st.session_state["email"] = email
-
-        # Insert/upsert into Supabase
-        supabase.table("users").upsert({"email": email}).execute()
-
-        # Fetch role
-        role_res = supabase.table("users").select("role").eq("email", email).execute()
-        st.session_state["role"] = role_res.data[0]["role"] if role_res.data else "viewer"
-
-        st.rerun()
+        st.success(f"Welcome {email}")
 else:
-    email = st.session_state["email"]
-    role = st.session_state.get("role", "viewer")
-
-    st.sidebar.success(f"✅ Logged in as {email} ({role})")
-
+    st.sidebar.success(f"✅ Logged in as: {st.session_state['email']}")
     if st.sidebar.button("Logout"):
         st.session_state.clear()
         st.rerun()
-
     # # --- Signup ---
     # elif choice == "Signup":
     #     st.subheader("Signup")
