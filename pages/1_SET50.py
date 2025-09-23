@@ -277,34 +277,44 @@ if unique_exp.size:
     if atm_exp_idx is None:
         atm_exp_idx = int(unique_exp[int(len(unique_exp)/2)]) if unique_exp.size else None
 #
-# --- Load block ---
+# --- Load block from Supabase ---
 st.subheader("📂 Load saved strategy")
-saved_files = list(SAVE_DIR.glob("*.json"))
 load_state = False
-# ------------------- Template auto-selection (index-offset strike mapping) -------------------
-# selected_series = []
-missing_legs = []  # collect missing legs for info but do not insert broken placeholders into legs list
+missing_legs = []  # keep same structure
 
-if saved_files:
-    selected_file = st.selectbox("Choose saved file", saved_files, key="load_file")
+if user_email:
+    # Fetch saved strategies for this user
+    res = supabase.table("strategies").select("*").eq("email", user_email).execute()
+    strategies = res.data if res.data else []
 
-    if st.button("Load selected", disabled=disabled):
-        
-        with open(selected_file, "r", encoding="utf-8") as f:
-            loaded = json.load(f)
+    if strategies:
+        # Build selectbox with strategy names
+        selected_name = st.selectbox(
+            "Choose saved strategy",
+            [s["name"] for s in strategies],
+            key="load_strategy"
+        )
 
-        # Store into session_state
-        
-        st.session_state["selected_series"] = loaded.get("selected_series", [])
-        st.session_state["df_legs_saved"] = pd.DataFrame(loaded.get("legs", []))
-        load_state = True
-        template_choice = "Saved"
+        if st.button("Load selected"):
+            # Find the chosen strategy
+            strat = next(s for s in strategies if s["name"] == selected_name)
 
-        st.success(f"Loaded strategy from {selected_file}")
+            # Strategy content (list of dicts)
+            legs_data = strat.get("content", [])
+
+            # Restore into session_state
+            st.session_state["selected_series"] = strat.get("selected_series", [])
+            st.session_state["df_legs_saved"] = pd.DataFrame(legs_data)
+
+            load_state = True
+            template_choice = "Saved"
+
+            st.success(f"✅ Loaded strategy '{selected_name}' from database")
 
 # --- Initialize working vars ---
 selected_series = st.session_state.get("selected_series", [])
 df_legs_loaded = st.session_state.get("df_legs_saved", pd.DataFrame())
+
 
 
 all_series = df_market["Series"].tolist() + (df_market_Future["Series"].tolist() if not df_market_Future.empty else [])
