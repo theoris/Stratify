@@ -300,14 +300,15 @@ if user_email:
             strat = next(s for s in strategies if s["name"] == selected_name)
 
             # Strategy content (list of dicts)
-            legs_data = strat.get("content", [])
+            legs_data = strat.get("legs", [])
 
             # Restore into session_state
             st.session_state["selected_series"] = strat.get("selected_series", [])
             st.session_state["df_legs_saved"] = pd.DataFrame(legs_data)
             # default_price = df_legs_loaded[df_legs_loaded["Series"] == s]["TradePrice"].values[0]
-            # default_qty = df_legs_loaded[df_legs_loaded["Series"] == s]["Qty"].values[0]
-
+        #     # default_qty = df_legs_loaded[df_legs_loaded["Series"] == s]["Qty"].values[0]
+        # st.session_state["selected_series"] = loaded.get("selected_series", [])
+        # st.session_state["df_legs_saved"] = pd.DataFrame(loaded.get("legs", []))
 
             load_state = True
             template_choice = "Saved"
