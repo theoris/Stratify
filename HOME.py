@@ -1,30 +1,35 @@
-# Home.py
+# HOME.py
 import streamlit as st
-import os
-from supabase_client import supabase
+import jwt  # pyjwt
+from supabase import create_client
 from streamlit_oauth import OAuth2Component
 
-# --- Load secrets ---
+# --- Load secrets from Streamlit Cloud ---
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
 GOOGLE_CLIENT_ID = st.secrets["GOOGLE_CLIENT_ID"]
 GOOGLE_CLIENT_SECRET = st.secrets["GOOGLE_CLIENT_SECRET"]
 
 AUTHORIZE_URL = "https://accounts.google.com/o/oauth2/auth"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 
-# --- Redirect URI (local vs deployed) ---
+# Detect environment for redirect
 REDIRECT_URI = (
-    "http://localhost:8501"
+    "http://localhost:8501"  # local dev
     if "LOCAL_DEV" in st.secrets
-    else "https://stratifyth.streamlit.app/"
+    else "https://stratifyth.streamlit.app/ URL
 )
 
-# --- Create OAuth2 object ---
+# --- Init OAuth2 component ---
 oauth2 = OAuth2Component(
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET,
     AUTHORIZE_URL,
     TOKEN_URL,
 )
+
 
 st.set_page_config(page_title="Options & Futures Strategy Tool", layout="wide",page_icon="📖")
 st.title("📊 Options & Futures Strategy Tool")
@@ -47,35 +52,56 @@ st.info("👈 Choose an index page from the sidebar to get started!")
 # --- Sidebar ---
 st.sidebar.title("🔑 Authentication")
 
-if result:
-    # Different versions of streamlit-oauth return token differently
-    email = None
+if "email" not in st.session_state:
+    # Show Google login button
+    result = oauth2.authorize_button(
+        "Login with Google",
+        redirect_uri=REDIRECT_URI,
+        scope="openid email profile",
+    )
 
-    # Case 1: id_token directly in result
-    if "id_token" in result:
-        from jwt import decode
-        id_token = result["id_token"]
-        # decode the JWT (without verifying for simplicity)
-        payload = decode(id_token, options={"verify_signature": False})
-        email = payload.get("email")
+    if result:
+        email = None
 
-    # Case 2: id_token nested under token
-    elif "token" in result and "id_token" in result["token"]:
-        from jwt import decode
-        id_token = result["token"]["id_token"]
-        payload = decode(id_token, options={"verify_signature": False})
-        email = payload.get("email")
+        # Try to extract id_token
+        id_token = result.get("id_token") or result.get("token", {}).get("id_token")
 
-    if email:
-        st.session_state["email"] = email
-        st.success(f"✅ Welcome {email}")
-    else:
-        st.error("⚠️ Could not extract email from Google login response.")
-        st.write("Debug result:", result)
+        if id_token:
+            payload = jwt.decode(id_token, options={"verify_signature": False})
+            email = payload.get("email")
 
+        if email:
+            st.session_state["email"] = email
 
+            # --- Supabase user handling ---
+            existing = supabase.table("users").select("id").execute()
+            if not existing.data:
+                # First user → promote to admin
+                supabase.table("users").insert({"email": email, "role": "admin"}).execute()
+                st.session_state["role"] = "admin"
+            else:
+                # Other users → upsert
+                supabase.table("users").upsert({"email": email}).execute()
+                role_res = supabase.table("users").select("role").eq("email", email).execute()
+                st.session_state["role"] = role_res.data[0]["role"] if role_res.data else "viewer"
 
-# Sidebar navigation
+            st.success(f"✅ Logged in as {email}")
+            st.rerun()
+        else:
+            st.error("⚠️ Could not extract email from Google login response")
+            st.write("Debug result:", result)
+
+else:
+    email = st.session_state["email"]
+    role = st.session_state.get("role", "viewer")
+    st.sidebar.success(f"✅ Logged in as: {email} ({role})")
+
+    if st.sidebar.button("Logout"):
+        st.session_state.clear()
+        st.rerun()
+
+# --- Sidebar navigation ---
 st.sidebar.markdown("---")
 st.sidebar.markdown("📂 Pages:")
 st.sidebar.page_link("pages/1_SET50.py", label="SET50 Strategy")
+st.sidebar.page_link("pages/ADMIN_AREA.py", label="Admin Dashboard")
