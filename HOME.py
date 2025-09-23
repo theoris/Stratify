@@ -15,7 +15,7 @@ TOKEN_URL = "https://oauth2.googleapis.com/token"
 REDIRECT_URI = (
     "http://localhost:8501"
     if "LOCAL_DEV" in st.secrets
-    else "https://your-app-name.streamlit.app"
+    else "https://stratifyth.streamlit.app/"
 )
 
 # --- Create OAuth2 object ---
