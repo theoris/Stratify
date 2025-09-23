@@ -28,7 +28,7 @@ user_email = st.session_state.get("email", None)
 user_role = st.session_state.get("role", "guest")
 
 # ---------- Market Loader ----------
-MARKET_PATH = Path("data/market_data_option.json")  # change per index (SET50, GF, etc.)
+MARKET_PATH = Path("data/market_data_S50OPTION.json")  # change per index (SET50, GF, etc.)
 
 def load_market(path: Path) -> pd.DataFrame:
     try:
