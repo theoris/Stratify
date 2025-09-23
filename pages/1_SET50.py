@@ -895,7 +895,7 @@ if st.button("Save Strategy"):
         # save_file = SAVE_DIR / f"{save_name}.json"
         # with open(save_file, "w", encoding="utf-8") as f:
         #     json.dump(save_payload, f, indent=2, ensure_ascii=False)        
-        strategy_content = save_payload.to_dict(orient="records")
+        strategy_content = save_payload
 
         # Save to Supabase (always inserts a new row)
         supabase.table("strategies").insert(
