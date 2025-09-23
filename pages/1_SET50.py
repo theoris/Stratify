@@ -30,7 +30,7 @@ if "email" not in st.session_state:
     user_email = None
 else:
     user_email = st.session_state["email"]
-    st.info(f"Logged in as: {user_email} ({st.session_state.get('role','viewer')}
+    st.info(f"Logged in as: {user_email} ({st.session_state.get('role','viewer')})")
 
 
 
