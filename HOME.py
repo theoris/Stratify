@@ -57,6 +57,7 @@ is_trader_or_admin = user_role in ["trader", "admin"]
 if not is_trader_or_admin:
     expan = st.sidebar.expander("Donate for advance usage")
     expan.write("via USDT (BEP20) : 0x696D4c64d126E6d4fdB704aCd1e8f7B1d443c910")
+    expan.code("0x696D4c64d126E6d4fdB704aCd1e8f7B1d443c910", language=None)
     expan.image("img/donate.png", caption="QRCODE 0x696D4c64d126E6d4fdB704aCd1e8f7B1d443c910")
 
 if "email" not in st.session_state:
