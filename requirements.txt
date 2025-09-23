@@ -15,4 +15,3 @@ typing-inspection==0.4.1
 bcrypt
 supabase
 streamlit-oauth
-auth
