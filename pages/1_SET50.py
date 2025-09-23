@@ -15,10 +15,23 @@ import sys
 
 # Add parent directory (app/) to Python path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
+# --- Setup Supabase ---
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Default state
 user_email = st.session_state.get("email", None)
 user_role = st.session_state.get("role", "guest")
+
+# --- Auth check (viewer allowed, but saving restricted) ---
+if "email" not in st.session_state:
+    st.warning("👀 You can explore, but please login to save strategies.")
+    user_email = None
+else:
+    user_email = st.session_state["email"]
+    st.info(f"Logged in as: {user_email} ({st.session_state.get('role','viewer')})")
+
 
 # Define permissions
 is_logged_in = user_email is not None
@@ -847,22 +860,44 @@ st.download_button("Download payoff_full.csv", data=pd.DataFrame({"Spot": S_rang
 
 #SAVE
 st.subheader("💾 Save Strategy")
-save_name = st.text_input("File name (without .json)", f"strategy_{date.today()}")
-df_save = df_legs
-df_save["Expiry"] = df_legs["Expiry"].astype(str)
-if st.button("Save now", disabled=disabled):
-    save_payload = {
-        "entry_date": str(date.today()),
-        "selected_series": selected_series,
-        "legs": df_save.to_dict(orient="records")
-    }
-    save_file = SAVE_DIR / f"{save_name}.json"
-    with open(save_file, "w", encoding="utf-8") as f:
-        json.dump(save_payload, f, indent=2, ensure_ascii=False)
-    st.session_state["last_saved"] = str(save_file)  # ✅ keep track
-# Feedback
-if "last_saved" in st.session_state:
-    st.success(f"Saved strategy → {st.session_state['last_saved']}")
+strategy_name = st.text_input("Strategy name")
+if st.button("Save My Strategy", disabled=disabled):
+    if not user_email:
+        st.error("⚠️ Please login first.")
+    elif not strategy_name.strip():
+        st.error("⚠️ Please enter a strategy name.")
+    else:
+        try:
+            # Prepare df_legs for saving
+            df_save = df_legs.copy()
+            df_save["Expiry"] = df_save["Expiry"].astype(str)
+
+            # Convert to JSON-serializable dict
+            strategy_content = df_save.to_dict(orient="records")
+
+            supabase.table("strategies").upsert(
+                {
+                    "email": user_email,
+                    "name": strategy_name,
+                    "content": strategy_content,
+                },
+                on_conflict=["email", "name"]
+            ).execute()
+
+            st.success(f"✅ Strategy '{strategy_name}' saved for {user_email}")
+        except json.JSONDecodeError:
+            st.error("❌ Invalid JSON format.")
+
+# --- Load saved strategies ---
+if user_email:
+    st.subheader("📂 My Saved Strategies")
+    res = supabase.table("strategies").select("*").eq("email", user_email).execute()
+    if res.data:
+        for strat in res.data:
+            with st.expander(strat["name"]):
+                st.json(strat["content"])
+    else:
+        st.info("No saved strategies yet.")
 
 if not user_email or not user_role:
     st.sidebar.warning("⚠️ Please log in first. for more advance detail.")
