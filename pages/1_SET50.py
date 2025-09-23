@@ -694,19 +694,38 @@ broke = equity < total_IM
 
 # ------------------- Plot -------------------
 st.subheader("Payoff chart")
-fig, ax = plt.subplots(figsize=(10,6))
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Main payoff lines
 ax.plot(S_range, total_pnl_expiry, label="At Expiry (intrinsic)", linewidth=2)
-ax.plot(S_range, total_pnl_before, label=f"Before Expiry (vol shift {vol_shift_pct:+.0f}%)", linestyle="--", linewidth=2)
+ax.plot(
+    S_range,
+    total_pnl_before,
+    label=f"Before Expiry (vol shift {vol_shift_pct:+.0f}%)",
+    linestyle="--",
+    linewidth=2,
+)
+
+# Shade positive (green) and negative (red) areas for expiry payoff
+ax.fill_between(S_range, total_pnl_expiry, 0, where=(total_pnl_expiry >= 0), color="green", alpha=0.2)
+ax.fill_between(S_range, total_pnl_expiry, 0, where=(total_pnl_expiry < 0), color="red", alpha=0.2)
+
+# Breakeven lines
 ax.axhline(0, linestyle="--", color="black")
 for bx in breakevens:
     ax.axvline(bx, color="red", linestyle="--", alpha=0.6)
     ax.text(bx, 0, f"{bx:.1f}", color="red", ha="center", va="bottom")
+
+# Label Y-intercept
 ax.text(S_range[0], y_intercept, f"Y={y_intercept:.0f}", color="blue", va="bottom")
+
 ax.set_xlabel("Underlying price")
 ax.set_ylabel("Profit / Loss")
 ax.grid(True)
 ax.legend()
+
 st.pyplot(fig)
+
 
 # ------------------- Strategy detection (use relative expiry + strike-step by index) -------------------
 
