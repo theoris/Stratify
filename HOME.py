@@ -27,8 +27,9 @@ oauth2 = OAuth2Component(
 result = oauth2.authorize_button(
     "Login with Google",
     redirect_uri=REDIRECT_URI,
-    scope=["openid", "email", "profile"],
+    scope="openid email profile",
 )
+
 
 st.set_page_config(page_title="Options & Futures Strategy Tool", layout="wide",page_icon="📖")
 st.title("📊 Options & Futures Strategy Tool")
