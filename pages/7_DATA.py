@@ -24,6 +24,14 @@ if st.session_state.get("role") not in ["trader", "admin"]:
     st.stop()
 st.success("✅ Welcome, Trader!")
 
+# Default state
+user_email = st.session_state.get("email", None)
+user_role = st.session_state.get("role", "guest")
+
+# Define permissions
+is_logged_in = user_email is not None
+is_trader_or_admin = user_role in ["trader", "admin"]
+
 SAVE_DIR = Path("saved_strategies")
 SAVE_DIR.mkdir(exist_ok=True)
 # ------------------- Helpers -------------------
@@ -207,7 +215,7 @@ df_market_Future5 = df_market_Future5[["Series", "OI (Contract)", "Last", "Bid",
 
 # JSON preview for templates (stringify nested fields so Streamlit doesn't crash)
 with st.expander("JSON & Market preview (read-only)"):
-    if role_required(st.session_state, ["trader", "admin"]):
+    if is_trader_or_admin:
 
 
         tab1, tab2,tab3, tab4,tab5,tab6 = st.tabs(["Option", "SET50","SVF", "GF","GF10","GO"])

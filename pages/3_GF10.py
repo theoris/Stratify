@@ -25,6 +25,14 @@ if st.session_state.get("role") not in ["trader", "admin"]:
     st.stop()
 st.success("✅ Welcome, Trader!")
 
+# Default state
+user_email = st.session_state.get("email", None)
+user_role = st.session_state.get("role", "guest")
+
+# Define permissions
+is_logged_in = user_email is not None
+is_trader_or_admin = user_role in ["trader", "admin"]
+
 # ------------------- Helpers -------------------
 def parse_num(x):
     if x is None: return np.nan
@@ -192,7 +200,7 @@ except Exception:
     df_temp_preview = pd.DataFrame()
 
 with st.expander("JSON & Market preview (read-only)"):
-    if role_required(st.session_state, ["trader", "admin"]):
+    if is_trader_or_admin:
         if not df_temp_preview.empty:
             st.dataframe(df_temp_preview)
         st.dataframe(df_market)

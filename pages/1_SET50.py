@@ -203,7 +203,7 @@ try:
 except Exception:
     df_temp_preview = pd.DataFrame()
 with st.expander("JSON & Market preview (read-only)"):
-    if role_required(st.session_state, ["trader", "admin"]):
+    if is_trader_or_admin:
         tab1, tab2,tab3, tab4,tab5 = st.tabs(["Option", "Future","Option margin", "Future margin","Template"])
         tab1.dataframe(df_market, height=250)
         tab2.dataframe(df_market_Future, height=250)
@@ -212,22 +212,6 @@ with st.expander("JSON & Market preview (read-only)"):
         tab5.dataframe(df_temp_preview, height=250)
     else:
         st.info("🔒 You don't have permission to view this data.")
-
-
-# with st.expander("JSON & Market preview (read-only)"):
-#     if role_required(st.session_state, ["trader", "admin"]):
-#         if not df_temp_preview.empty:
-#             st.dataframe(df_temp_preview)
-#         st.dataframe(df_market)
-#         if not df_margin.empty:
-#             st.dataframe(df_margin)
-#         if not df_market_Future.empty:
-#             st.dataframe(df_market_Future)
-#             if not df_margin_Future.empty:
-#                 st.dataframe(df_margin_Future)
-#     else:
-#         st.info("🔒 You don't have permission to view this data.")
-
 
 #Check default multiplier,S_manual from df_market_Future json
 if not df_market_Future.empty:
