@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import norm
 import itertools
 import sys
-
+from supabase import create_client
 # Add parent directory (app/) to Python path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 # --- Setup Supabase ---
