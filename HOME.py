@@ -73,17 +73,21 @@ if "email" not in st.session_state:
         if email:
             st.session_state["email"] = email
 
-            # --- Supabase user handling ---
+            # Check if any users exist → first login rule
             existing = supabase.table("users").select("id").execute()
+
             if not existing.data:
-                # First user → promote to admin
-                supabase.table("users").insert({"email": email, "role": "admin"}).execute()
+                # First ever user → force admin
+                supabase.table("users").upsert({"email": email, "role": "admin"}).execute()
                 st.session_state["role"] = "admin"
             else:
-                # Other users → upsert
+                # All other logins → upsert ensures no duplicate error
                 supabase.table("users").upsert({"email": email}).execute()
                 role_res = supabase.table("users").select("role").eq("email", email).execute()
                 st.session_state["role"] = role_res.data[0]["role"] if role_res.data else "viewer"
+
+
+           
 
             st.success(f"✅ Logged in as {email}")
             st.rerun()
