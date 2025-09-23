@@ -4,6 +4,31 @@ import os
 from supabase_client import supabase
 from streamlit_oauth import OAuth2Component
 
+GOOGLE_CLIENT_ID = st.secrets["GOOGLE_CLIENT_ID"]
+GOOGLE_CLIENT_SECRET = st.secrets["GOOGLE_CLIENT_SECRET"]
+
+AUTHORIZE_URL = "https://accounts.google.com/o/oauth2/auth"
+TOKEN_URL = "https://oauth2.googleapis.com/token"
+
+REDIRECT_URI = (
+    "http://localhost:8501"
+    if "LOCAL_DEV" in st.secrets
+    else "https://stratifyth.streamlit.app"
+)
+
+oauth2 = OAuth2Component(
+    GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET,
+    AUTHORIZE_URL,
+    TOKEN_URL,
+)
+
+# 🔹 Call with redirect + scope explicitly
+result = oauth2.authorize_button(
+    "Login with Google",
+    redirect_uri=REDIRECT_URI,
+    scope=["openid", "email", "profile"],
+)
 
 st.set_page_config(page_title="Options & Futures Strategy Tool", layout="wide",page_icon="📖")
 st.title("📊 Options & Futures Strategy Tool")
@@ -23,27 +48,6 @@ Each page contains the **same tool structure** but loads different JSON market &
 
 st.info("👈 Choose an index page from the sidebar to get started!")
 
-
-# --- OAuth config ---
-GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
-GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-AUTHORIZE_URL = "https://accounts.google.com/o/oauth2/auth"
-TOKEN_URL = "https://oauth2.googleapis.com/token"
-
-REDIRECT_URI = (
-    "http://localhost:8501"
-    if os.getenv("LOCAL_DEV")
-    else "https://your-streamlit-app.streamlit.app"
-)
-
-oauth2 = OAuth2Component(
-    GOOGLE_CLIENT_ID,
-    GOOGLE_CLIENT_SECRET,
-    AUTHORIZE_URL,
-    TOKEN_URL,
-    REDIRECT_URI,
-    ["openid", "email", "profile"],
-)
 
 st.sidebar.title("🔑 Authentication")
 # If user already logged in → show welcome + logout
