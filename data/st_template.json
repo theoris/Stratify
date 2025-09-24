@@ -7,6 +7,7 @@
       {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
     ]
   },
+
   "Bull Call Spread": {
     "tip": "Moderate bullish move, limited risk and reward.",
     "description": "A limited-risk bullish strategy using a long call and short higher-strike call.\n- Market outlook: Moderately bullish.\n- Profit: Limited to difference between strikes minus net premium.\n- Risk: Limited to net premium paid.\n- Breakeven: Lower strike + net premium.\n- Volatility: Neutral to rising volatility.\n- Greeks: Limited Delta, Long Gamma, Limited Vega, Short Theta.",
@@ -42,16 +43,31 @@
         {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
     ]
     },
-
-  "Long Put": {
-    "tip": "Simple bearish bet with limited risk.",
-    "description": "A bearish strategy buying one put option at-the-money (ATM).\n- Market outlook: Strong downside expected.\n- Profit: Significant if price falls, limited to strike - premium.\n- Risk: Limited to premium paid.\n- Breakeven: Strike - premium.\n- Volatility: Benefits from higher volatility.\n- Greeks: Short Delta, Long Gamma, Long Vega, Short Theta.",
+    "Long Put": {
+      "tip": "Simple bearish bet with limited risk.",
+      "description": "A bearish strategy buying one put option at-the-money (ATM).\n- Market outlook: Strong downside expected.\n- Profit: Significant if price falls, limited to strike - premium.\n- Risk: Limited to premium paid.\n- Breakeven: Strike - premium.\n- Volatility: Benefits from higher volatility.\n- Greeks: Short Delta, Long Gamma, Long Vega, Short Theta.",
+      "group": "Directional Strategies (Bearish)",
+      "components": [
+        {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+      ]
+  },
+    "Short Call": {
+    "tip": "Bearish to neutral income strategy, unlimited risk.",
+    "description": "A strategy where the trader sells one call option, typically at or slightly out-of-the-money.\n- Market outlook: Neutral to bearish (expecting price to stay below strike).\n- Profit: Limited to the premium received.\n- Risk: Unlimited if price rises sharply above the strike.\n- Breakeven: Strike + premium received.\n- Volatility: Benefits from falling volatility.\n- Greeks: Short Delta, Short Gamma, Short Vega, Positive Theta.",
     "group": "Directional Strategies (Bearish)",
     "components": [
-      {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+      {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
     ]
   },
-  "Bear Put Spread": {
+   "Short Put": {
+    "tip": "Bullish income strategy, high risk if market falls.",
+    "description": "A strategy where the trader sells one put option, typically at or slightly out-of-the-money.\n- Market outlook: Neutral to bullish (expecting price to stay above strike).\n- Profit: Limited to the premium received.\n- Risk: Large downside risk if price falls significantly.\n- Breakeven: Strike - premium received.\n- Volatility: Benefits from falling volatility.\n- Greeks: Long Delta, Short Gamma, Short Vega, Positive Theta.",
+    "group": "Directional Strategies (Bullish)",
+    "components": [
+      {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },
+    "Bear Put Spread": {
     "tip": "Moderate bearish move with defined risk/reward.",
     "description": "A limited-risk bearish strategy using a long put and short lower-strike put.\n- Market outlook: Moderately bearish.\n- Profit: Limited to strike difference - net premium.\n- Risk: Limited to net premium paid.\n- Breakeven: Higher strike - net premium.\n- Volatility: Neutral to rising volatility.\n- Greeks: Limited Delta, Long Gamma, Limited Vega, Short Theta.",
     "group": "Directional Strategies (Bearish)",
@@ -69,7 +85,7 @@
         {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
     ]
     },  
-  "Protective Put": {
+    "Protective Put": {
     "tip": "Insurance for a long position, limits downside.",
     "description": "A hedging strategy: long futures plus long put for downside protection.\n- Market outlook: Bullish but want protection.\n- Profit: Unlimited upside, downside limited by put.\n- Risk: Premium paid for put.\n- Breakeven: Future entry + premium.\n- Volatility: Better in higher volatility if insurance is needed.\n- Greeks: Long Delta (from future), Long Vega, Long Gamma, Short Theta.",
     "group": "Directional Strategies (Bearish)",
@@ -86,7 +102,7 @@
         {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
     ]
     },
-  "Strangle": {
+    "Strangle": {
     "tip": "Cheaper volatility play, needs larger move than straddle.",
     "description": "A cheaper volatility strategy: buy OTM call and put.\n- Market outlook: Expecting very large moves.\n- Profit: Unlimited if price moves strongly.\n- Risk: Limited to total premiums (cheaper than straddle).\n- Breakevens: Upper strike + premium, Lower strike - premium.\n- Volatility: Profits from high volatility.\n- Greeks: Neutral Delta, Long Vega, Long Gamma, Short Theta.",
     "group": "Volatility Strategies",
@@ -95,7 +111,7 @@
       {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
     ]
   },
-  "Straddle": {
+    "Straddle": {
     "tip": "Bet on big moves in either direction.",
     "description": "A volatility strategy buying both ATM call and put.\n- Market outlook: Expecting large move, unsure direction.\n- Profit: Unlimited if market moves strongly either way.\n- Risk: Limited to total premium paid.\n- Breakevens: Strike ± premiums.\n- Volatility: Profits from high volatility.\n- Greeks: Neutral Delta, Long Vega, Long Gamma, Short Theta.",
     "group": "Volatility Strategies",
@@ -145,7 +161,7 @@
         {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
     ]
     },
-  "Collar": {
+    "Collar": {
     "tip": "Protects downside but caps upside.",
     "description": "A hedging strategy using long future, long put, and short call.\n- Market outlook: Hold position but limit downside and upside.\n- Profit: Capped upside (short call).\n- Risk: Limited downside (long put).\n- Breakeven: Future entry ± premiums.\n- Volatility: Works well in uncertain markets.\n- Greeks: Long Delta (from future), Mix of Vega depending on strikes, Neutral to Short Theta.",
     "group": "Synthetic/Combination Strategies",
@@ -155,7 +171,7 @@
       {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
     ]
   },
-  "Calendar Spread": {
+    "Calendar Spread": {
     "tip": "Neutral short-term, long volatility exposure.",
     "description": "A time-based strategy using options of different expiries.\n- Market outlook: Neutral short term, move expected later.\n- Profit: From time decay of short option.\n- Risk: Limited to net premium.\n- Breakeven: Depends on strikes and premiums.\n- Volatility: Benefits from rising implied volatility in longer-term option.\n- Greeks: Short Theta (short leg), Long Vega (long leg).",
     "group": "Multi-Expiry Strategies",
@@ -173,8 +189,6 @@
         {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 1}
     ]
     },
-    
-
     "Double Diagonal multi-expiry": {
     "tip": "",        
     "description": "A complex, non-directional strategy used to profit from time decay. It is essentially an Iron Condor using diagonal spreads.",
@@ -186,7 +200,6 @@
         {"type": "Put", "qty": 1, "relative_strike": -2, "relative_expiry": 1}
     ]
     },
-
     "Synthetic Covered Call": {
     "tip": "",        
     "description": "Replicates a covered call using futures. A long futures position is hedged with a short call to generate income.",
