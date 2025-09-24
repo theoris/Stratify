@@ -18,15 +18,15 @@
     ]
   },
     "Bull Put Spread": {
-    "tip": "",
-    "description": "Used when expecting a moderate rise in price or no change. A credit spread used to generate income.",
+    "tip": "Moderately bullish, limited risk and reward.",
+    "description": "A credit spread strategy where the trader sells a put option and buys a lower-strike put option.\n- Market outlook: Moderately bullish (expect price to stay above short put strike).\n- Profit: Limited to net premium received.\n- Risk: Limited to strike difference minus premium.\n- Breakeven: Short put strike - net premium.\n- Volatility: Benefits from falling volatility.\n- Greeks: Long Delta (net bullish), Short Vega, Short Gamma, Positive Theta.",
     "group": "Directional Strategies (Bullish)",
     "components": [
         {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
         {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
     ]
     },
-  "Covered Call": {
+    "Covered Call": {
     "tip": "Generate income on long stock/futures with capped upside.",
     "description": "A moderately bullish income strategy combining long futures with short call.\n- Market outlook: Sideways to mildly bullish.\n- Profit: Limited (capped at short call strike).\n- Risk: Large downside risk from underlying.\n- Breakeven: Spot - premium received.\n- Volatility: Works best in low volatility.\n- Greeks: Long Delta (from future), Short Vega, Short Gamma, Positive Theta.",
     "group": "Directional Strategies (Bullish)",
@@ -77,14 +77,13 @@
     ]
   },
     "Bear Call Spread": {
-    "tip": "",
-    "description": "Used when expecting a moderate fall in price or no change. A credit spread used to generate income.",
-    "group": "Directional Strategies (Bearish)",
+    "tip": "Moderately bearish, limited risk and reward.",
+    "description": "A credit spread strategy where the trader sells a call and buys a higher-strike call.\n- Market outlook: Moderately bearish (expect price to stay below short call strike).\n- Profit: Limited to net premium received.\n- Risk: Limited to strike difference minus premium.\n- Breakeven: Short call strike + net premium.\n- Volatility: Benefits from falling volatility.\n- Greeks: Short Delta (net bearish), Short Vega, Short Gamma, Positive Theta.",    "group": "Directional Strategies (Bearish)",
     "components": [
         {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
         {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
     ]
-    },  
+    },
     "Protective Put": {
     "tip": "Insurance for a long position, limits downside.",
     "description": "A hedging strategy: long futures plus long put for downside protection.\n- Market outlook: Bullish but want protection.\n- Profit: Unlimited upside, downside limited by put.\n- Risk: Premium paid for put.\n- Breakeven: Future entry + premium.\n- Volatility: Better in higher volatility if insurance is needed.\n- Greeks: Long Delta (from future), Long Vega, Long Gamma, Short Theta.",
@@ -121,9 +120,8 @@
     ]
   },
     "Iron Condor": {
-    "tip": "",        
-    "description": "A non-directional, income-generating strategy used in low volatility. Limits both risk and profit.",
-    "group": "Volatility Strategies (Non-Directional)",
+    "tip": "Neutral strategy, profits from low volatility and time decay.",
+    "description": "A four-leg options strategy combining a bull put spread and a bear call spread.\n- Market outlook: Neutral, expecting price to stay within a range.\n- Profit: Limited to total net premium received.\n- Risk: Limited to difference between strikes minus premium.\n- Breakevens: Lower short put strike - premium, Upper short call strike + premium.\n- Volatility: Best in low volatility markets.\n- Greeks: Near Delta neutral, Short Vega, Short Gamma, Positive Theta.",
     "components": [
         {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0},
         {"type": "Call", "qty": 1, "relative_strike": 2, "relative_expiry": 0},
@@ -132,8 +130,8 @@
     ]
     },
     "Iron Butterfly": {
-    "tip": "",        
-    "description": "A non-directional, income-generating strategy used for very low volatility. Requires the price to stay in a narrow range.",
+    "tip": "Neutral strategy, high credit, needs price to stay near middle strike.",
+    "description": "A four-leg options strategy combining a short straddle with protective wings.\n- Market outlook: Neutral, expecting little movement.\n- Profit: Limited to net premium received (high credit).\n- Risk: Limited to wing spread minus premium.\n- Breakevens: Middle strike ± (wing width - net credit).\n- Volatility: Best in low volatility markets.\n- Greeks: Near Delta neutral, Short Vega, Short Gamma, Positive Theta.",
     "group": "Volatility Strategies (Non-Directional)",
     "components": [
         {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
@@ -143,8 +141,8 @@
     ]
     },
     "Long Butterfly (Call)": {
-    "tip": "",        
-    "description": "A low-risk strategy used when expecting a flat market. The max profit is at the middle strike price.",
+    "tip": "Neutral strategy with low cost, best if price stays near middle strike.",
+    "description": "A debit spread using calls at three different strikes: buy 1 lower call, sell 2 middle calls, buy 1 higher call.\n- Market outlook: Neutral, expecting little movement around middle strike.\n- Profit: Limited, occurs if price finishes at middle strike.\n- Risk: Limited to net debit paid.\n- Breakevens: Lower strike + debit, Upper strike - debit.\n- Volatility: Profits from low volatility.\n- Greeks: Near Delta neutral, Short Vega, Long Gamma around middle strike, Negative Theta.",
     "group": "Volatility Strategies (Non-Directional)",
     "components": [
         {"type": "Call", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
@@ -152,6 +150,16 @@
         {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
     ]
     },
+    "Long Butterfly (Put)": {
+    "tip": "Neutral strategy, built with puts, best if price stays near middle strike.",
+    "description": "A debit spread using puts at three different strikes: buy 1 higher put, sell 2 middle puts, buy 1 lower put.\n- Market outlook: Neutral, expecting little movement around middle strike.\n- Profit: Limited, occurs if price finishes at middle strike.\n- Risk: Limited to net debit paid.\n- Breakevens: Upper strike - debit, Lower strike + debit.\n- Volatility: Profits from low volatility.\n- Greeks: Near Delta neutral, Short Vega, Long Gamma around middle strike, Negative Theta.",
+    "group": "Volatility Strategies",
+    "components": [
+      {"type": "Put", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
+      {"type": "Put", "qty": -2, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+    ]
+  },    
     "Synthetic Long Stock": {
     "tip": "",        
     "description": "Used to replicate the profit/loss profile of owning a stock using options. Based on the concept of put-call parity.",
