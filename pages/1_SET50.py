@@ -448,6 +448,7 @@ if template_choice == "Custom":
 else:
     if template_choice != "Saved":
         st.subheader(f"📌 Template selected: {template_choice}.")
+        st.info(f" {STRATEGY_TEMPLATES[template_choice]['tip']}")
         st.info(f" {STRATEGY_TEMPLATES[template_choice]['description']}")
         st.info(f" {STRATEGY_TEMPLATES[template_choice]['group']} ")
         st.info(f" {STRATEGY_TEMPLATES[template_choice]['components']} ")
@@ -823,7 +824,7 @@ def detect_strategy(df_legs_local, spot, strike_step_guess=None, atm_exp_idx_gue
 spot_detect = S_manual if S_manual > 0 else (np.median(df_legs["Strike"].dropna()) if not df_legs["Strike"].dropna().empty else spot_ref)
 detected = detect_strategy(df_legs, spot_detect)
 if detected:
-    desc = STRATEGY_TEMPLATES.get(detected, {}).get("description", "")
+    desc = STRATEGY_TEMPLATES.get(detected, {}).get("tip", "")
     st.success(f"📌 Detected strategy: **{detected}**")
     if desc:
         st.info(desc)
