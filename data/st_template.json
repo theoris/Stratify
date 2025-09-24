@@ -76,20 +76,20 @@
             {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
         ]
     },
-    "Straddle": {
-        "description": "Used when expecting a significant move in either direction (high volatility). Profit is unlimited.",
-        "group": "Volatility Strategies (Non-Directional)",
-        "components": [
-            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
-        ]
-    },
     "Strangle": {
         "description": "Similar to a Straddle but with a wider profit range, used for high volatility. Cheaper to enter but requires a bigger price move.",
         "group": "Volatility Strategies (Non-Directional)",
         "components": [
             {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
             {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+        ]
+    },
+    "Straddle": {
+        "description": "Used when expecting a significant move in either direction (high volatility). Profit is unlimited.",
+        "group": "Volatility Strategies (Non-Directional)",
+        "components": [
+            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
         ]
     },
     "Iron Condor": {
