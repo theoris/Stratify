@@ -255,16 +255,6 @@
         {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 1}
     ]
     },
-    "Delta-Hedged Strangle": {
-    "tip": "Cheaper volatility trade with futures hedge.",
-    "description": "Buy an out-of-the-money call and put (strangle) and hedge Delta with futures. This provides volatility exposure with lower upfront cost than a straddle.\n- Market outlook: Expecting very large moves but no directional bias.\n- Profit: Large gains if volatility explodes.\n- Risk: Limited to total premiums and hedge cost.\n- Breakevens: Upper strike + premiums, Lower strike - premiums (adjusted with hedge).\n- Volatility: Profits from very high realized volatility.\n- Greeks: Delta neutral, Long Vega, Long Gamma, Short Theta.",
-    "group": "Futures + Options Combinations",
-    "components": [
-      {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
-      {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
-      {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
-    ]
-  },    
     "Delta-Hedged Straddle": {
     "tip": "Neutralize direction, isolate volatility exposure.",
     "description": "Buy a straddle (long call + long put) and short futures in proportion to Delta to remain neutral.\n- Market outlook: Expecting big volatility but no directional bias.\n- Profit: Gains if realized volatility exceeds implied volatility.\n- Risk: Time decay (Theta) and Vega exposure.\n- Greeks: Delta neutral, Long Vega, Long Gamma, Short Theta.",
@@ -274,5 +264,15 @@
       {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
       {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
     ]
-  }      
+  },
+    "Delta-Hedged Strangle": {
+    "tip": "Cheaper volatility trade with futures hedge.",
+    "description": "Buy an out-of-the-money call and put (strangle) and hedge Delta with futures. This provides volatility exposure with lower upfront cost than a straddle.\n- Market outlook: Expecting very large moves but no directional bias.\n- Profit: Large gains if volatility explodes.\n- Risk: Limited to total premiums and hedge cost.\n- Breakevens: Upper strike + premiums, Lower strike - premiums (adjusted with hedge).\n- Volatility: Profits from very high realized volatility.\n- Greeks: Delta neutral, Long Vega, Long Gamma, Short Theta.",
+    "group": "Futures + Options Combinations",
+    "components": [
+      {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
+      {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  }    
 }
