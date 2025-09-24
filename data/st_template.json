@@ -1,196 +1,217 @@
 {
-    "Long Call": {
-        "description": "Used when expecting a strong bullish move.",
-        "group": "Directional Strategies (Bullish)",        
-        "components": [
-            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
-        ]
-    },
-    "Bull Call Spread": {
-        "description": "A bullish strategy with limited risk and limited profit. Used when expecting a moderate rise in price.",
-        "group": "Directional Strategies (Bullish)",
-        "components": [
-            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
-        ]
-    },
+  "Long Call": {
+    "tip": "Simple bullish bet with limited risk, unlimited profit.",
+    "description": "A bullish strategy buying one call option at-the-money (ATM).\n- Market outlook: Expecting strong upside.\n- Profit: Unlimited if price rises.\n- Risk: Limited to premium paid.\n- Breakeven: Strike + premium.\n- Volatility: Benefits from higher volatility.\n- Greeks: Long Delta, Long Gamma, Long Vega, Short Theta.",
+    "group": "Directional Strategies (Bullish)",
+    "components": [
+      {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },
+  "Bull Call Spread": {
+    "tip": "Moderate bullish move, limited risk and reward.",
+    "description": "A limited-risk bullish strategy using a long call and short higher-strike call.\n- Market outlook: Moderately bullish.\n- Profit: Limited to difference between strikes minus net premium.\n- Risk: Limited to net premium paid.\n- Breakeven: Lower strike + net premium.\n- Volatility: Neutral to rising volatility.\n- Greeks: Limited Delta, Long Gamma, Limited Vega, Short Theta.",
+    "group": "Directional Strategies (Bullish)",
+    "components": [
+      {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
+    ]
+  },
     "Bull Put Spread": {
-        "description": "Used when expecting a moderate rise in price or no change. A credit spread used to generate income.",
-        "group": "Directional Strategies (Bullish)",
-        "components": [
-            {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
-        ]
+    "tip": "",
+    "description": "Used when expecting a moderate rise in price or no change. A credit spread used to generate income.",
+    "group": "Directional Strategies (Bullish)",
+    "components": [
+        {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+    ]
     },
-    "Covered Call": {
-        "description": "Used to generate income on a long stock position in a flat to slightly bullish market.",
-        "group": "Directional Strategies (Bullish)",
-        "components": [
-            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
-        ]
-    },
+  "Covered Call": {
+    "tip": "Generate income on long stock/futures with capped upside.",
+    "description": "A moderately bullish income strategy combining long futures with short call.\n- Market outlook: Sideways to mildly bullish.\n- Profit: Limited (capped at short call strike).\n- Risk: Large downside risk from underlying.\n- Breakeven: Spot - premium received.\n- Volatility: Works best in low volatility.\n- Greeks: Long Delta (from future), Short Vega, Short Gamma, Positive Theta.",
+    "group": "Directional Strategies (Bullish)",
+    "components": [
+      {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
+    ]
+  },
     "Long Future": {
-        "description": "A simple bullish strategy using a futures contract, with no defined risk or profit limits.",
-        "group": "Directional Strategies (Bullish)",
-        "components": [
-            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
-        ]
+    "tip": "",
+    "description": "A simple bullish strategy using a futures contract, with no defined risk or profit limits.",
+    "group": "Directional Strategies (Bullish)",
+    "components": [
+        {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+    ]
     },
 
-    "Long Put": {
-        "description": "Used when expecting a strong bearish move.",
-        "group": "Directional Strategies (Bearish)",
-        "components": [
-            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
-        ]
-    },
-    "Bear Put Spread": {
-        "description": "A bearish strategy with limited risk and limited profit. Used when expecting a moderate fall in price.",
-        "group": "Directional Strategies (Bearish)",
-        "components": [
-            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0}
-        ]
-    },
+  "Long Put": {
+    "tip": "Simple bearish bet with limited risk.",
+    "description": "A bearish strategy buying one put option at-the-money (ATM).\n- Market outlook: Strong downside expected.\n- Profit: Significant if price falls, limited to strike - premium.\n- Risk: Limited to premium paid.\n- Breakeven: Strike - premium.\n- Volatility: Benefits from higher volatility.\n- Greeks: Short Delta, Long Gamma, Long Vega, Short Theta.",
+    "group": "Directional Strategies (Bearish)",
+    "components": [
+      {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },
+  "Bear Put Spread": {
+    "tip": "Moderate bearish move with defined risk/reward.",
+    "description": "A limited-risk bearish strategy using a long put and short lower-strike put.\n- Market outlook: Moderately bearish.\n- Profit: Limited to strike difference - net premium.\n- Risk: Limited to net premium paid.\n- Breakeven: Higher strike - net premium.\n- Volatility: Neutral to rising volatility.\n- Greeks: Limited Delta, Long Gamma, Limited Vega, Short Theta.",
+    "group": "Directional Strategies (Bearish)",
+    "components": [
+      {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0}
+    ]
+  },
     "Bear Call Spread": {
-        "description": "Used when expecting a moderate fall in price or no change. A credit spread used to generate income.",
-        "group": "Directional Strategies (Bearish)",
-        "components": [
-            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
-        ]
-    },
-    "Protective Put": {
-        "description": "Used to hedge a long stock position against a price drop.",
-        "group": "Directional Strategies (Bearish)",
-        "components": [
-            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
-        ]
-    },
+    "tip": "",
+    "description": "Used when expecting a moderate fall in price or no change. A credit spread used to generate income.",
+    "group": "Directional Strategies (Bearish)",
+    "components": [
+        {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
+    ]
+    },  
+  "Protective Put": {
+    "tip": "Insurance for a long position, limits downside.",
+    "description": "A hedging strategy: long futures plus long put for downside protection.\n- Market outlook: Bullish but want protection.\n- Profit: Unlimited upside, downside limited by put.\n- Risk: Premium paid for put.\n- Breakeven: Future entry + premium.\n- Volatility: Better in higher volatility if insurance is needed.\n- Greeks: Long Delta (from future), Long Vega, Long Gamma, Short Theta.",
+    "group": "Directional Strategies (Bearish)",
+    "components": [
+      {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },
     "Short Future": {
-        "description": "A simple bearish strategy using a futures contract, with no defined risk or profit limits.",
-        "group": "Directional Strategies (Bearish)",
-        "components": [
-            {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
-        ]
+    "tip": "",
+    "description": "A simple bearish strategy using a futures contract, with no defined risk or profit limits.",
+    "group": "Directional Strategies (Bearish)",
+    "components": [
+        {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+    ]
     },
-    "Strangle": {
-        "description": "Similar to a Straddle but with a wider profit range, used for high volatility. Cheaper to enter but requires a bigger price move.",
-        "group": "Volatility Strategies (Non-Directional)",
-        "components": [
-            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
-        ]
-    },
-    "Straddle": {
-        "description": "Used when expecting a significant move in either direction (high volatility). Profit is unlimited.",
-        "group": "Volatility Strategies (Non-Directional)",
-        "components": [
-            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
-        ]
-    },
+  "Strangle": {
+    "tip": "Cheaper volatility play, needs larger move than straddle.",
+    "description": "A cheaper volatility strategy: buy OTM call and put.\n- Market outlook: Expecting very large moves.\n- Profit: Unlimited if price moves strongly.\n- Risk: Limited to total premiums (cheaper than straddle).\n- Breakevens: Upper strike + premium, Lower strike - premium.\n- Volatility: Profits from high volatility.\n- Greeks: Neutral Delta, Long Vega, Long Gamma, Short Theta.",
+    "group": "Volatility Strategies",
+    "components": [
+      {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+    ]
+  },
+  "Straddle": {
+    "tip": "Bet on big moves in either direction.",
+    "description": "A volatility strategy buying both ATM call and put.\n- Market outlook: Expecting large move, unsure direction.\n- Profit: Unlimited if market moves strongly either way.\n- Risk: Limited to total premium paid.\n- Breakevens: Strike ± premiums.\n- Volatility: Profits from high volatility.\n- Greeks: Neutral Delta, Long Vega, Long Gamma, Short Theta.",
+    "group": "Volatility Strategies",
+    "components": [
+      {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },
     "Iron Condor": {
-        "description": "A non-directional, income-generating strategy used in low volatility. Limits both risk and profit.",
-        "group": "Volatility Strategies (Non-Directional)",
-        "components": [
-            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0},
-            {"type": "Call", "qty": 1, "relative_strike": 2, "relative_expiry": 0},
-            {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": -2, "relative_expiry": 0}
-        ]
+    "tip": "",        
+    "description": "A non-directional, income-generating strategy used in low volatility. Limits both risk and profit.",
+    "group": "Volatility Strategies (Non-Directional)",
+    "components": [
+        {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0},
+        {"type": "Call", "qty": 1, "relative_strike": 2, "relative_expiry": 0},
+        {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0},
+        {"type": "Put", "qty": 1, "relative_strike": -2, "relative_expiry": 0}
+    ]
     },
     "Iron Butterfly": {
-        "description": "A non-directional, income-generating strategy used for very low volatility. Requires the price to stay in a narrow range.",
-        "group": "Volatility Strategies (Non-Directional)",
-        "components": [
-            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
-            {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
-        ]
+    "tip": "",        
+    "description": "A non-directional, income-generating strategy used for very low volatility. Requires the price to stay in a narrow range.",
+    "group": "Volatility Strategies (Non-Directional)",
+    "components": [
+        {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
+        {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+    ]
     },
     "Long Butterfly (Call)": {
-        "description": "A low-risk strategy used when expecting a flat market. The max profit is at the middle strike price.",
-        "group": "Volatility Strategies (Non-Directional)",
-        "components": [
-            {"type": "Call", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
-            {"type": "Call", "qty": -2, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
-        ]
+    "tip": "",        
+    "description": "A low-risk strategy used when expecting a flat market. The max profit is at the middle strike price.",
+    "group": "Volatility Strategies (Non-Directional)",
+    "components": [
+        {"type": "Call", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
+        {"type": "Call", "qty": -2, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0}
+    ]
     },
     "Synthetic Long Stock": {
-        "description": "Used to replicate the profit/loss profile of owning a stock using options. Based on the concept of put-call parity.",
-        "group": "Synthetic & Combination Strategies",
-        "components": [
-            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
-        ]
+    "tip": "",        
+    "description": "Used to replicate the profit/loss profile of owning a stock using options. Based on the concept of put-call parity.",
+    "group": "Synthetic & Combination Strategies",
+    "components": [
+        {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+    ]
     },
-    "Collar": {
-        "description": "A risk-management strategy used to protect a long stock position while limiting upside profit and generating some income.",
-        "group": "Synthetic & Combination Strategies",
-        "components": [
-            {"type": "Future", "qty": 1},
-            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
-            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
-        ]
-    },
-    "Calendar Spread (Call) multi-expiry": {
-        "description": "Used when expecting moderate volatility but a flat price in the short term. Profits from time decay of the short-term option.",
-        "group": "Multi-Expiry Strategies",
-        "components": [
-            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 1}
-        ]
-    },
-    
+  "Collar": {
+    "tip": "Protects downside but caps upside.",
+    "description": "A hedging strategy using long future, long put, and short call.\n- Market outlook: Hold position but limit downside and upside.\n- Profit: Capped upside (short call).\n- Risk: Limited downside (long put).\n- Breakeven: Future entry ± premiums.\n- Volatility: Works well in uncertain markets.\n- Greeks: Long Delta (from future), Mix of Vega depending on strikes, Neutral to Short Theta.",
+    "group": "Synthetic/Combination Strategies",
+    "components": [
+      {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
+      {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
+    ]
+  },
+  "Calendar Spread": {
+    "tip": "Neutral short-term, long volatility exposure.",
+    "description": "A time-based strategy using options of different expiries.\n- Market outlook: Neutral short term, move expected later.\n- Profit: From time decay of short option.\n- Risk: Limited to net premium.\n- Breakeven: Depends on strikes and premiums.\n- Volatility: Benefits from rising implied volatility in longer-term option.\n- Greeks: Short Theta (short leg), Long Vega (long leg).",
+    "group": "Multi-Expiry Strategies",
+    "components": [
+      {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 1},
+      {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },
     "Diagonal Spread (Call) multi-expiry": {
-        "description": "Similar to a Calendar Spread but uses different strike prices, offering more flexibility.",
-        "group": "Multi-Expiry Strategies",
-        "components": [
-            {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 1}
-        ]
+    "tip": "",        
+    "description": "Similar to a Calendar Spread but uses different strike prices, offering more flexibility.",
+    "group": "Multi-Expiry Strategies",
+    "components": [
+        {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 1}
+    ]
     },
     
 
     "Double Diagonal multi-expiry": {
-        "description": "A complex, non-directional strategy used to profit from time decay. It is essentially an Iron Condor using diagonal spreads.",
-        "group": "Multi-Expiry Strategies",
-        "components": [
-            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0},
-            {"type": "Call", "qty": 1, "relative_strike": 2, "relative_expiry": 1},
-            {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": -2, "relative_expiry": 1}
-        ]
+    "tip": "",        
+    "description": "A complex, non-directional strategy used to profit from time decay. It is essentially an Iron Condor using diagonal spreads.",
+    "group": "Multi-Expiry Strategies",
+    "components": [
+        {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0},
+        {"type": "Call", "qty": 1, "relative_strike": 2, "relative_expiry": 1},
+        {"type": "Put", "qty": -1, "relative_strike": -1, "relative_expiry": 0},
+        {"type": "Put", "qty": 1, "relative_strike": -2, "relative_expiry": 1}
+    ]
     },
 
     "Synthetic Covered Call": {
-        "description": "Replicates a covered call using futures. A long futures position is hedged with a short call to generate income.",
-        "group": "Future & Option Combinations",
-        "components": [
-            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
-        ]
+    "tip": "",        
+    "description": "Replicates a covered call using futures. A long futures position is hedged with a short call to generate income.",
+    "group": "Future & Option Combinations",
+    "components": [
+        {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Call", "qty": -1, "relative_strike": 1, "relative_expiry": 0}
+    ]
     },
     "Synthetic Protective Put": {
-        "description": "Replicates a protective put. A long futures position is hedged with a long put to limit downside risk.",
-        "group": "Future & Option Combinations",
-        "components": [
-            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
-        ]
-    },
+    "tip": "",        
+    "description": "Replicates a protective put. A long futures position is hedged with a long put to limit downside risk.",
+    "group": "Future & Option Combinations",
+    "components": [
+        {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
+    ]
+    },  
     "Futures Calendar Spread": {
-        "description": "Profits from time decay and a difference in price between near-term and long-term futures contracts.",
-        "group": "Future & Option Combinations",
-        "components": [
-            {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
-            {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 1}
-        ]
+    "tip": "",
+    "description": "Profits from time decay and a difference in price between near-term and long-term futures contracts.",
+    "group": "Future & Option Combinations",
+    "components": [
+        {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+        {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 1}
+    ]
     }
-
 }
