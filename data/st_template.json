@@ -225,14 +225,54 @@
         {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
         {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0}
     ]
-    },  
+    },
+    "Synthetic Long with Futures": {
+    "tip": "Use options to replicate or enhance a long future position.",
+    "description": "Combine a long call and short put with a long future to create leveraged bullish exposure or hedge short positions.\n- Market outlook: Very bullish.\n- Profit: Unlimited upside.\n- Risk: Large downside risk.\n- Volatility: Sensitive to volatility shifts.\n- Greeks: Similar to futures but with Vega exposure.",
+    "group": "Futures + Options Combinations",
+    "components": [
+      {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Put", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },
+    "Synthetic Short with Futures": {
+    "tip": "Replicate or boost a short futures position using options.",
+    "description": "Combine a short call and long put (same strike & expiry) with a short future. This creates leveraged bearish exposure or can hedge long exposure.\n- Market outlook: Strongly bearish.\n- Profit: Significant if price falls.\n- Risk: Unlimited upside risk.\n- Breakeven: Strike ± option premiums.\n- Volatility: Benefits if implied volatility falls when holding synthetic exposure.\n- Greeks: Short Delta, Long Gamma, Short Vega, Short Theta.",
+    "group": "Futures + Options Combinations",
+    "components": [
+      {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Call", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },        
     "Futures Calendar Spread": {
-    "tip": "",
-    "description": "Profits from time decay and a difference in price between near-term and long-term futures contracts.",
+    "tip": "Neutral to directional play using different futures expiries.",
+    "description": "A spread strategy involving long and short futures in different expiries (same underlying).\n- Market outlook: Typically used to trade expectations of price changes across time, not outright direction.\n- Profit: Limited to difference in price movement between the two contracts.\n- Risk: Substantial if spread widens unexpectedly.\n- Breakeven: Depends on relative pricing of contracts.\n- Volatility: Sensitive to changes in term structure (contango/backwardation).\n- Greeks: No options Greeks, but carries calendar spread risk.",
     "group": "Future & Option Combinations",
     "components": [
         {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0},
         {"type": "Future", "qty": 1, "relative_strike": 0, "relative_expiry": 1}
     ]
-    }
+    },
+    "Delta-Hedged Strangle": {
+    "tip": "Cheaper volatility trade with futures hedge.",
+    "description": "Buy an out-of-the-money call and put (strangle) and hedge Delta with futures. This provides volatility exposure with lower upfront cost than a straddle.\n- Market outlook: Expecting very large moves but no directional bias.\n- Profit: Large gains if volatility explodes.\n- Risk: Limited to total premiums and hedge cost.\n- Breakevens: Upper strike + premiums, Lower strike - premiums (adjusted with hedge).\n- Volatility: Profits from very high realized volatility.\n- Greeks: Delta neutral, Long Vega, Long Gamma, Short Theta.",
+    "group": "Futures + Options Combinations",
+    "components": [
+      {"type": "Call", "qty": 1, "relative_strike": 1, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": -1, "relative_expiry": 0},
+      {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  },    
+    "Delta-Hedged Straddle": {
+    "tip": "Neutralize direction, isolate volatility exposure.",
+    "description": "Buy a straddle (long call + long put) and short futures in proportion to Delta to remain neutral.\n- Market outlook: Expecting big volatility but no directional bias.\n- Profit: Gains if realized volatility exceeds implied volatility.\n- Risk: Time decay (Theta) and Vega exposure.\n- Greeks: Delta neutral, Long Vega, Long Gamma, Short Theta.",
+    "group": "Futures + Options Combinations",
+    "components": [
+      {"type": "Call", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Put", "qty": 1, "relative_strike": 0, "relative_expiry": 0},
+      {"type": "Future", "qty": -1, "relative_strike": 0, "relative_expiry": 0}
+    ]
+  }      
 }
