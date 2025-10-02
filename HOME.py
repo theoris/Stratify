@@ -4,6 +4,17 @@ import jwt  # pyjwt
 from supabase import create_client
 from streamlit_oauth import OAuth2Component
 
+# --- Load secrets from Streamlit Cloud ---
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+GOOGLE_CLIENT_ID = st.secrets["GOOGLE_CLIENT_ID"]
+GOOGLE_CLIENT_SECRET = st.secrets["GOOGLE_CLIENT_SECRET"]
+
+AUTHORIZE_URL = "https://accounts.google.com/o/oauth2/auth"
+TOKEN_URL = "https://oauth2.googleapis.com/token"
+
 # Detect environment for redirect
 REDIRECT_URI = (
     "http://localhost:8501"  # local dev
