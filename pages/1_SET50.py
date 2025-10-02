@@ -915,11 +915,13 @@ if st.button("Save Strategy", disabled=disabled):
         strategy_content = save_payload
 
         # Save to Supabase (always inserts a new row)
+        user = supabase.auth.get_user()
         supabase.table("strategies").insert(
             {
                 "email": user_email,
                 "name": strategy_name,
                 "content": strategy_content,
+                "user_id": user.user.id  # ดึง user_id จาก session                
             }
         ).execute()
 
